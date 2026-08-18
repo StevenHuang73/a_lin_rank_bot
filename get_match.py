@@ -178,16 +178,9 @@ def rank_to_absolute_lp(rank):
     return tier_base + division_base + lp
 
 
-def compute_lp_diff(initial_rank, final_rank, wl):
+def compute_lp_diff(initial_rank, final_rank):
     """
     Computes LP gained/lost.
-
-    'wl' is intentionally kept in the function signature so this remains
-    compatible with existing code that calls:
-
-        compute_lp_diff(initial_rank, final_rank, wl)
-
-    It is no longer needed to calculate LP change.
     """
 
     initial_lp = rank_to_absolute_lp(initial_rank)
@@ -196,47 +189,13 @@ def compute_lp_diff(initial_rank, final_rank, wl):
     return final_lp - initial_lp
 
 
-def output_string(rank, wins, losses, wl, rank_difference):
-    total_games = wins + losses
-
-    winrate = (
-        wins / total_games * 100
-        if total_games > 0
-        else 0.0
-    )
-
-    lp_change = abs(rank_difference)
-
-    if wl:
-        status_line = (
-            f"Aaron Lin WON his last game! "
-            f"He gained {lp_change} LP!"
-        )
-    else:
-        status_line = (
-            f"Aaron Lin LOST his last game. "
-            f"He lost {lp_change} LP."
-        )
-
-    return (
-        f"{status_line}\n\n"
-        f"Aaron Lin's new rank is "
-        f"{rank[0]} {rank[1]}, {rank[2]} LP\n"
-        f"WINS: {wins} | LOSSES: {losses}\n"
-        f"WINRATE: {winrate:.2f}%"
-    )
-
-
 async def on_new_match(match_id: str, database=DATABASE_PATH):
     print(f"on_new_match called with {match_id}")
 
-    # Read the OLD ranked state before updating it.
     with open(database, "r", encoding="utf-8") as file:
         data = json.load(file)
 
     db_rank, db_wins, db_losses = get_rank(data)
-
-    # Fetch and store the NEW ranked state.
     new_rank, new_wins, new_losses = update_database(database)
 
     wins_diff = new_wins - db_wins
@@ -248,47 +207,27 @@ async def on_new_match(match_id: str, database=DATABASE_PATH):
         f"Losses change: {db_losses} -> {new_losses}"
     )
 
-    # Determine win/loss from the ranked W/L counters.
     if wins_diff == 1 and losses_diff == 0:
         wl = True
-
     elif wins_diff == 0 and losses_diff == 1:
         wl = False
-
     elif wins_diff == 0 and losses_diff == 0:
-        # Ranked match appeared in Match-V5, but ranked record didn't change.
-        # Most likely remake / non-counting game.
         print("No ranked W/L change detected. Treating as REMAKE.")
-        return "REMAKE"
-
+        return {"status": "remake"}
     else:
-        # This means more than one ranked result happened between polls,
-        # or Riot's API state changed in an unexpected way.
-        print(
-            "Unexpected ranked record change. "
-            f"wins_diff={wins_diff}, losses_diff={losses_diff}"
-        )
+        print(f"Unexpected ranked record change. wins_diff={wins_diff}, losses_diff={losses_diff}")
+        return {"status": "unknown"}
 
-        return "UNKNOWN"
+    rank_difference = compute_lp_diff(db_rank, new_rank)
 
-    rank_difference = compute_lp_diff(
-        db_rank,
-        new_rank,
-        wl=wl
-    )
-
-    output = output_string(
-        new_rank,
-        new_wins,
-        new_losses,
-        wl,
-        rank_difference=rank_difference
-    )
-
-    print(output)
-
-    return output
-
+    return {
+        "status": "result",
+        "win": wl,
+        "rank": new_rank,
+        "wins": new_wins,
+        "losses": new_losses,
+        "lp_change": rank_difference,
+    }
 
 def get_stored_match_id(database=DATABASE_PATH):
     """
