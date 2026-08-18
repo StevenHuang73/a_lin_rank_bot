@@ -5,5 +5,13 @@
     "wins": 123,
     "losses": 153,
     "hotStreak": false,
-    "last_match_id": "NA1_5623802894"
+    "last_match_id": "NA1_5623802894",
+
+    "daily": {
+        "date": "2026-08-18",
+        "wins": 0,
+        "losses": 0
+    },
+
+    "loss_streak": 0
 }

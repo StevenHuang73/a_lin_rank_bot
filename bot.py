@@ -11,6 +11,17 @@ CHANNEL_ID = os.getenv("CHANNEL_ID")
 RANK_EMBLEM_TEMPLATE = "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/emblem-{}.png"
 PUUID = os.getenv("PUUID")
 
+LOSS_STREAK_FACES = {
+    1: "😕",
+    2: "😔",
+    3: "😞",
+    4: "😢",
+    5: "😭",
+    6: "💀",
+    7: "🪦",
+}
+
+
 from PIL import Image
 import requests
 import io
@@ -30,6 +41,15 @@ def get_cropped_emblem(url: str) -> io.BytesIO:
     return buf
 def get_rank_emblem_url(tier: str) -> str:
     return RANK_EMBLEM_TEMPLATE.format(tier.lower())
+
+def get_loss_streak_face(streak: int) -> str:
+    if streak <= 0:
+        return ""
+
+    # too lazy to add more faces
+    return LOSS_STREAK_FACES.get(
+        min(streak, max(LOSS_STREAK_FACES))
+    )
 
 class MyBot(commands.Bot):
     def __init__(self, *args, **kwargs):
@@ -65,6 +85,10 @@ class MyBot(commands.Bot):
         wins = result["wins"]
         losses = result["losses"]
         lp_change = result["lp_change"]
+        daily_wins = result["daily_wins"]
+        daily_losses = result["daily_losses"]
+        loss_streak = result["loss_streak"]
+
 
         total_games = wins + losses
         winrate = (wins / total_games * 100) if total_games > 0 else 0.0
@@ -80,6 +104,8 @@ class MyBot(commands.Bot):
         embed.add_field(name="Rank", value=f"{rank[0]} {rank[1]}, {rank[2]} LP", inline=False)
         embed.add_field(name="Record", value=f"{wins}W / {losses}L", inline=True)
         embed.add_field(name="Winrate", value=f"{winrate:.2f}%", inline=True)
+        embed.add_field(name="Today", value=f"{daily_wins}W / {daily_losses}L", inline=True)
+        if not win: embed.add_field(name="Loss Streak", value=f"{loss_streak} {get_loss_streak_face(loss_streak)}", inline=True)
         embed.set_footer(text="Aaron Lin Rank Updates")
 
         await channel.send(embed=embed, file=file)
