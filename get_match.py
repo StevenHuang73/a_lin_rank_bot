@@ -3,6 +3,7 @@ import os
 import requests
 import json
 import asyncio
+import time
 from datetime import datetime,timedelta
 from zoneinfo import ZoneInfo
 
@@ -223,7 +224,7 @@ def compute_lp_diff(initial_rank, final_rank):
 
 async def on_new_match(match_id: str, database=DATABASE_PATH):
     print(f"on_new_match called with {match_id}")
-
+    time.sleep(2)
     with open(database, "r", encoding="utf-8") as file:
         data = json.load(file)
 
