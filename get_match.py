@@ -3,12 +3,16 @@ import os
 import requests
 import json
 import asyncio
+from datetime import datetime,timedelta
+from zoneinfo import ZoneInfo
 
 load_dotenv()
 
 RIOT_API = os.getenv("RIOT_API")
 PUUID = os.getenv("PUUID")
 DATABASE_PATH = os.getenv("DATABASE")
+
+TIMEZONE = ZoneInfo("America/Vancouver")
 
 headers = {"X-Riot-Token": RIOT_API}
 
@@ -93,11 +97,40 @@ def get_latest_match_id(puuid=PUUID):
 
     return matches[0]
 
+def get_today():
+    now = datetime.now(TIMEZONE)
+
+    shifted_time = now - timedelta(hours=6)
+
+    return shifted_time.date().isoformat()
+
+
+def ensure_daily_state(data):
+    today = get_today()
+
+    if "daily" not in data or data["daily"].get("date") != today:
+        data["daily"] = {
+            "date": today,
+            "wins": 0,
+            "losses": 0
+        }
+
+    if "loss_streak" not in data:
+        data["loss_streak"] = 0
+
 
 def initialize_database(database=DATABASE_PATH):
     ranked_data, latest_match_id = get_account_info()
 
-    data = {
+    try:
+        with open(database, "r", encoding="utf-8") as file:
+            data = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        data = {}
+
+    ensure_daily_state(data)
+
+    data.update({
         "tier": ranked_data["tier"],
         "rank": ranked_data["rank"],
         "leaguePoints": ranked_data["leaguePoints"],
@@ -105,13 +138,12 @@ def initialize_database(database=DATABASE_PATH):
         "losses": ranked_data["losses"],
         "hotStreak": ranked_data["hotStreak"],
         "last_match_id": latest_match_id
-    }
+    })
 
     with open(database, "w", encoding="utf-8") as file:
         json.dump(data, file, indent=4)
 
     print(f"Database initialized and saved to {database}")
-
 
 def update_database(database=DATABASE_PATH):
     ranked_data, latest_match_id = get_account_info()
@@ -195,8 +227,20 @@ async def on_new_match(match_id: str, database=DATABASE_PATH):
     with open(database, "r", encoding="utf-8") as file:
         data = json.load(file)
 
+    ensure_daily_state(data)
+
     db_rank, db_wins, db_losses = get_rank(data)
-    new_rank, new_wins, new_losses = update_database(database)
+
+    ranked_data, latest_match_id = get_account_info()
+
+    new_rank = [
+        ranked_data["tier"],
+        ranked_data["rank"],
+        ranked_data["leaguePoints"]
+    ]
+
+    new_wins = ranked_data["wins"]
+    new_losses = ranked_data["losses"]
 
     wins_diff = new_wins - db_wins
     losses_diff = new_losses - db_losses
@@ -209,16 +253,41 @@ async def on_new_match(match_id: str, database=DATABASE_PATH):
 
     if wins_diff == 1 and losses_diff == 0:
         wl = True
+
+        data["daily"]["wins"] += 1
+        data["loss_streak"] = 0
+
     elif wins_diff == 0 and losses_diff == 1:
         wl = False
+
+        data["daily"]["losses"] += 1
+        data["loss_streak"] += 1
+
     elif wins_diff == 0 and losses_diff == 0:
         print("No ranked W/L change detected. Treating as REMAKE.")
         return {"status": "remake"}
+
     else:
-        print(f"Unexpected ranked record change. wins_diff={wins_diff}, losses_diff={losses_diff}")
+        print(
+            f"Unexpected ranked record change. "
+            f"wins_diff={wins_diff}, losses_diff={losses_diff}"
+        )
         return {"status": "unknown"}
 
     rank_difference = compute_lp_diff(db_rank, new_rank)
+
+    data.update({
+        "tier": ranked_data["tier"],
+        "rank": ranked_data["rank"],
+        "leaguePoints": ranked_data["leaguePoints"],
+        "wins": new_wins,
+        "losses": new_losses,
+        "hotStreak": ranked_data["hotStreak"],
+        "last_match_id": latest_match_id
+    })
+
+    with open(database, "w", encoding="utf-8") as file:
+        json.dump(data, file, indent=4)
 
     return {
         "status": "result",
@@ -227,6 +296,9 @@ async def on_new_match(match_id: str, database=DATABASE_PATH):
         "wins": new_wins,
         "losses": new_losses,
         "lp_change": rank_difference,
+        "daily_wins": data["daily"]["wins"],
+        "daily_losses": data["daily"]["losses"],
+        "loss_streak": data["loss_streak"]
     }
 
 def get_stored_match_id(database=DATABASE_PATH):
