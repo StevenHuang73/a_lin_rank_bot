@@ -51,7 +51,7 @@ POROS_LEADERBOARD_SIZE=10
 | `POROS_WIN_MULTIPLIER` | Payout on a correct next-game **win** bet |
 | `POROS_LOSS_MULTIPLIER` | Payout on a correct next-game **loss** bet |
 | `POROS_RESET_COOLDOWN_HOURS` | Hours between `/poro reset` uses |
-| `POROS_LEADERBOARD_SIZE` | `/poro leaderboard` length |
+| `POROS_LEADERBOARD_SIZE` | `/leaderboard` length |
 
 ## 1.0.0
 

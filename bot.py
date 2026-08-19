@@ -266,7 +266,67 @@ class ResetConfirmView(discord.ui.View):
         await interaction.response.edit_message(content="Reset cancelled.", view=self)
 
 
-poro = app_commands.Group(name="poro", description="Bet Poros on a.lin's next ranked game")
+@bot.tree.command(name="bet", description="Bet Poros on a.lin's next ranked game")
+@app_commands.describe(
+    prediction="Will a.lin win or lose the next ranked game?",
+    amount="How many Poros to wager",
+)
+@app_commands.choices(
+    prediction=[
+        app_commands.Choice(name="Win", value="win"),
+        app_commands.Choice(name="Loss", value="loss"),
+    ]
+)
+async def bet(
+    interaction: discord.Interaction,
+    prediction: app_commands.Choice[str],
+    amount: int,
+):
+    try:
+        result = poros.place_bet(str(interaction.user.id), prediction.value, amount)
+    except poros.PorosError as exc:
+        await interaction.response.send_message(str(exc), ephemeral=True)
+        return
+
+    action = "added to" if result["aggregated"] else "placed"
+    embed = discord.Embed(
+        title="Poro Bet",
+        description=(
+            f"{interaction.user.mention} {action} **{result['added']}** Poros on "
+            f"**{result['prediction']}**."
+        ),
+        color=discord.Color.gold(),
+    )
+    embed.add_field(name="Position", value=f"{result['amount']} on {result['prediction']}", inline=True)
+    embed.add_field(name="Odds", value=_fmt_multiplier(result["multiplier"]), inline=True)
+    embed.add_field(name="Pays", value=f"{result['potential_payout']} Poros", inline=True)
+    embed.add_field(name="Remaining", value=f"{result['balance']} Poros", inline=True)
+    await interaction.response.send_message(embed=embed)
+
+
+@bot.tree.command(name="leaderboard", description="Poro Rich List")
+async def leaderboard(interaction: discord.Interaction):
+    rows = poros.leaderboard()
+    embed = discord.Embed(
+        title="Poro Rich List",
+        color=discord.Color.gold(),
+    )
+    if not rows:
+        embed.description = "No wallets yet. Use `/poro balance` to get started."
+        await interaction.response.send_message(embed=embed)
+        return
+
+    lines = []
+    for row in rows:
+        lines.append(
+            f"**{row['rank']}.** <@{row['user_id']}> — {row['balance']} Poros "
+            f"({row['bets_won']}W/{row['bets_lost']}L)"
+        )
+    embed.description = "\n".join(lines)
+    await interaction.response.send_message(embed=embed)
+
+
+poro = app_commands.Group(name="poro", description="Poro wallet and help")
 
 
 @poro.command(name="balance", description="Check your Poro balance")
@@ -303,66 +363,6 @@ async def poro_balance(interaction: discord.Interaction):
     await interaction.response.send_message(embed=embed)
 
 
-@poro.command(name="bet", description="Bet Poros on a.lin's next ranked game")
-@app_commands.describe(
-    prediction="Will a.lin win or lose the next ranked game?",
-    amount="How many Poros to wager",
-)
-@app_commands.choices(
-    prediction=[
-        app_commands.Choice(name="Win", value="win"),
-        app_commands.Choice(name="Loss", value="loss"),
-    ]
-)
-async def poro_bet(
-    interaction: discord.Interaction,
-    prediction: app_commands.Choice[str],
-    amount: int,
-):
-    try:
-        result = poros.place_bet(str(interaction.user.id), prediction.value, amount)
-    except poros.PorosError as exc:
-        await interaction.response.send_message(str(exc), ephemeral=True)
-        return
-
-    action = "added to" if result["aggregated"] else "placed"
-    embed = discord.Embed(
-        title="Poro Bet",
-        description=(
-            f"{interaction.user.mention} {action} **{result['added']}** Poros on "
-            f"**{result['prediction']}**."
-        ),
-        color=discord.Color.gold(),
-    )
-    embed.add_field(name="Position", value=f"{result['amount']} on {result['prediction']}", inline=True)
-    embed.add_field(name="Odds", value=_fmt_multiplier(result["multiplier"]), inline=True)
-    embed.add_field(name="Pays", value=f"{result['potential_payout']} Poros", inline=True)
-    embed.add_field(name="Remaining", value=f"{result['balance']} Poros", inline=True)
-    await interaction.response.send_message(embed=embed)
-
-
-@poro.command(name="leaderboard", description="Poro Rich List")
-async def poro_leaderboard(interaction: discord.Interaction):
-    rows = poros.leaderboard()
-    embed = discord.Embed(
-        title="Poro Rich List",
-        color=discord.Color.gold(),
-    )
-    if not rows:
-        embed.description = "No wallets yet. Use `/poro balance` to get started."
-        await interaction.response.send_message(embed=embed)
-        return
-
-    lines = []
-    for row in rows:
-        lines.append(
-            f"**{row['rank']}.** <@{row['user_id']}> — {row['balance']} Poros "
-            f"({row['bets_won']}W/{row['bets_lost']}L)"
-        )
-    embed.description = "\n".join(lines)
-    await interaction.response.send_message(embed=embed)
-
-
 @poro.command(name="reset", description="Reset to starting Poros if you're broke")
 async def poro_reset(interaction: discord.Interaction):
     eligibility = poros.reset_eligibility(str(interaction.user.id))
@@ -394,9 +394,9 @@ async def poro_help(interaction: discord.Interaction):
     embed.add_field(
         name="Commands",
         value=(
+            "`/bet` — wager on win or loss\n"
+            "`/leaderboard` — Poro Rich List\n"
             "`/poro balance` — wallet and record\n"
-            "`/poro bet` — wager on win or loss\n"
-            "`/poro leaderboard` — Poro Rich List\n"
             "`/poro reset` — refill at 0 Poros"
         ),
         inline=False,
