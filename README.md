@@ -154,6 +154,7 @@ If commands are missing: kick the bot, re-invite with `applications.commands`, r
 
 | Variable | Purpose | Default |
 |---|---|---|
+| `ENV_VERSION` | Must match `example.env`; warns on startup if stale | `1.3.0` in example |
 | `DISCORD_TOKEN` | Bot token | — |
 | `CHANNEL_ID` | Channel for rank posts and Poro settlements | — |
 | `DISCORD_GUILD_ID` | Test server ID; guild-syncs slash commands in `BOT_ENV=dev` | — |

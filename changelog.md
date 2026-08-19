@@ -1,6 +1,22 @@
 # Changelog
 
-Env file versions match the `# Version` comment in `example.env`. Copy any new keys into your local `.env` when you upgrade.
+Env file versions are the `ENV_VERSION` key in `example.env`. Copy any new keys into your local `.env` when you upgrade. On startup the bot warns if `.env` is missing `ENV_VERSION` or it does not match `example.env`.
+
+## 1.3.0 — 2026-08-19
+
+Startup check for a stale `.env`.
+
+### Env file
+
+Replace the old `# Version` comment with:
+
+```
+ENV_VERSION=1.3.0
+```
+
+| Key | Purpose |
+|---|---|
+| `ENV_VERSION` | Must match `example.env`. The bot prints a warning (then still starts) if it is missing or behind. |
 
 ## 1.2.0 — 2026-08-19
 

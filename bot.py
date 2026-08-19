@@ -5,8 +5,10 @@ from dotenv import load_dotenv
 import os
 from get_match import poll_for_new_match, initialize_database, on_new_match
 import poros
+from env_version import warn_if_env_outdated
 
 load_dotenv()
+warn_if_env_outdated()
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 CHANNEL_ID = os.getenv("CHANNEL_ID")
 DISCORD_GUILD_ID = os.getenv("DISCORD_GUILD_ID")
