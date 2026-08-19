@@ -9,8 +9,22 @@ import poros
 load_dotenv()
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 CHANNEL_ID = os.getenv("CHANNEL_ID")
+DISCORD_GUILD_ID = os.getenv("DISCORD_GUILD_ID")
+BOT_ENV = os.getenv("BOT_ENV", "prod").strip().lower()
+IS_DEV = BOT_ENV == "dev"
 RANK_EMBLEM_TEMPLATE = "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/emblem-{}.png"
 PUUID = os.getenv("PUUID")
+
+
+def _env_flag(name: str, default: bool = False) -> bool:
+    raw = os.getenv(name)
+    if raw is None:
+        return default
+    return raw.strip().lower() in {"1", "true", "yes", "on"}
+
+
+# Dev defaults to skipping Riot so local testing does not need a live game or API key.
+SKIP_RIOT = _env_flag("SKIP_RIOT", default=IS_DEV)
 
 LOSS_STREAK_FACES = {
     #Add new faces if you want
@@ -53,24 +67,75 @@ def get_loss_streak_face(streak: int) -> str:
         min(streak, max(LOSS_STREAK_FACES))
     )
 
+
+async def send_rank_embed(
+    channel,
+    *,
+    win: bool,
+    rank: list,
+    wins: int,
+    losses: int,
+    lp_change: int,
+    daily_wins: int,
+    daily_losses: int,
+    loss_streak: int,
+):
+    total_games = wins + losses
+    winrate = (wins / total_games * 100) if total_games > 0 else 0.0
+    embed = discord.Embed(
+        title="VICTORY! 🟢" if win else "DEFEAT 🔴",
+        description=f"{'+' if win else '-'}{abs(lp_change)} LP",
+        color=discord.Color.green() if win else discord.Color.red(),
+    )
+    buf = get_cropped_emblem(get_rank_emblem_url(rank[0]))
+    file = discord.File(buf, filename="emblem.png")
+    embed.set_thumbnail(url="attachment://emblem.png")
+    embed.add_field(name="Rank", value=f"{rank[0]} {rank[1]}, {rank[2]} LP", inline=False)
+    embed.add_field(name="Record", value=f"{wins}W / {losses}L", inline=True)
+    embed.add_field(name="Winrate", value=f"{winrate:.2f}%", inline=True)
+    embed.add_field(name="Today", value=f"{daily_wins}W / {daily_losses}L", inline=True)
+    if not win:
+        embed.add_field(
+            name="Loss Streak",
+            value=f"{loss_streak} {get_loss_streak_face(loss_streak)}",
+            inline=True,
+        )
+    embed.set_footer(text="Aaron Lin Rank Updates")
+    await channel.send(embed=embed, file=file)
+
 class MyBot(commands.Bot):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.poll_started = False
         
     async def setup_hook(self):
-        # Sync slash commands with Discord on startup
-        await self.tree.sync()
+        if IS_DEV and DISCORD_GUILD_ID:
+            guild = discord.Object(id=int(DISCORD_GUILD_ID))
+            self.tree.copy_global_to(guild=guild)
+            synced = await self.tree.sync(guild=guild)
+            print(f"DEV: synced {len(synced)} slash commands to guild {DISCORD_GUILD_ID}")
+        else:
+            await self.tree.sync()
         
     async def on_ready(self):
-        print('Logged on as', self.user)
-        initialize_database()
+        print(f"Logged on as {self.user} (BOT_ENV={BOT_ENV}, SKIP_RIOT={SKIP_RIOT})")
+        if IS_DEV:
+            await self.change_presence(
+                status=discord.Status.dnd,
+                activity=discord.Game(name="DEV · local"),
+            )
+
+        if not SKIP_RIOT:
+            initialize_database()
+        else:
+            print("Skipping Riot snapshot/polling")
+
         poros.ensure_open_next_game_market()
 
-        if not self.poll_started:
+        if not SKIP_RIOT and not self.poll_started:
             self.poll_started = True
             self.loop.create_task(poll_for_new_match(on_new_match=self.handle_new_match, puuid=PUUID))
-        else:
+        elif self.poll_started:
             print("Polling already started")
 
     async def handle_new_match(self, match_id: str):
@@ -93,34 +158,51 @@ class MyBot(commands.Bot):
             )
             return
 
-        win = result["win"]
-        rank = result["rank"]
-        wins = result["wins"]
-        losses = result["losses"]
-        lp_change = result["lp_change"]
-        daily_wins = result["daily_wins"]
-        daily_losses = result["daily_losses"]
-        loss_streak = result["loss_streak"]
-
-
-        total_games = wins + losses
-        winrate = (wins / total_games * 100) if total_games > 0 else 0.0
-        embed = discord.Embed(
-            title="VICTORY! 🟢" if win else "DEFEAT 🔴",
-            description=f"{'+' if win else '-'}{abs(lp_change)} LP",
-            color=discord.Color.green() if win else discord.Color.red(),
+        await send_rank_embed(
+            channel,
+            win=result["win"],
+            rank=result["rank"],
+            wins=result["wins"],
+            losses=result["losses"],
+            lp_change=result["lp_change"],
+            daily_wins=result["daily_wins"],
+            daily_losses=result["daily_losses"],
+            loss_streak=result["loss_streak"],
         )
-        buf = get_cropped_emblem(get_rank_emblem_url(rank[0]))
-        file = discord.File(buf, filename="emblem.png")
-        embed.set_thumbnail(url="attachment://emblem.png")
-        embed.add_field(name="Rank", value=f"{rank[0]} {rank[1]}, {rank[2]} LP", inline=False)
-        embed.add_field(name="Record", value=f"{wins}W / {losses}L", inline=True)
-        embed.add_field(name="Winrate", value=f"{winrate:.2f}%", inline=True)
-        embed.add_field(name="Today", value=f"{daily_wins}W / {daily_losses}L", inline=True)
-        if not win: embed.add_field(name="Loss Streak", value=f"{loss_streak} {get_loss_streak_face(loss_streak)}", inline=True)
-        embed.set_footer(text="Aaron Lin Rank Updates")
+        await self._announce_poro_settlement(
+            channel,
+            poros.resolve_market("win" if result["win"] else "loss", match_id=match_id),
+        )
 
-        await channel.send(embed=embed, file=file)
+    async def simulate_match(self, channel, outcome: str, match_id: str):
+        if outcome == "remake":
+            await channel.send("🔁 Remake — no LP change.")
+            await self._announce_poro_settlement(
+                channel,
+                poros.refund_market(match_id=match_id, reason="remake"),
+            )
+            return
+
+        if outcome == "unknown":
+            await channel.send("⚠️ Couldn't determine match result — check logs.")
+            await self._announce_poro_settlement(
+                channel,
+                poros.refund_market(match_id=match_id, reason="unknown"),
+            )
+            return
+
+        win = outcome == "win"
+        await send_rank_embed(
+            channel,
+            win=win,
+            rank=["PLATINUM", "II", 23],
+            wins=120,
+            losses=100,
+            lp_change=18 if win else 16,
+            daily_wins=3 if win else 2,
+            daily_losses=1 if win else 2,
+            loss_streak=0 if win else 2,
+        )
         await self._announce_poro_settlement(
             channel,
             poros.resolve_market("win" if win else "loss", match_id=match_id),
@@ -340,6 +422,33 @@ async def poro_help(interaction: discord.Interaction):
 
 bot.tree.add_command(poro)
 
+if IS_DEV:
+    dev = app_commands.Group(name="dev", description="Local testing helpers (dev bot only)")
+
+    @dev.command(name="resolve", description="Fake a match result and settle Poro bets")
+    @app_commands.describe(outcome="Simulated match outcome")
+    @app_commands.choices(
+        outcome=[
+            app_commands.Choice(name="Win", value="win"),
+            app_commands.Choice(name="Loss", value="loss"),
+            app_commands.Choice(name="Remake", value="remake"),
+            app_commands.Choice(name="Unknown", value="unknown"),
+        ]
+    )
+    async def dev_resolve(
+        interaction: discord.Interaction,
+        outcome: app_commands.Choice[str],
+    ):
+        await interaction.response.defer(ephemeral=True)
+        match_id = f"DEV_{outcome.value}_{interaction.id}"
+        await bot.simulate_match(interaction.channel, outcome.value, match_id)
+        await interaction.followup.send(
+            f"Simulated **{outcome.value}**. Poros settled in this channel.",
+            ephemeral=True,
+        )
+
+    bot.tree.add_command(dev)
+
 @bot.event
 async def on_message(message):
     if message.author == bot.user:
@@ -347,36 +456,17 @@ async def on_message(message):
 
     if message.content.lower() == "ping":
         channel = bot.get_channel(int(CHANNEL_ID))
-        
-        win = False
-        rank = ['PLATINUM', "II", 23]
-        wins = 120
-        losses = 10000
-        lp_change = 30
-        daily_wins = 5
-        daily_losses = 10
-        loss_streak = 7
-
-
-        total_games = wins + losses
-        winrate = (wins / total_games * 100) if total_games > 0 else 0.0
-
-        embed = discord.Embed(
-            title="VICTORY! 🟢" if win else "DEFEAT 🔴",
-            description=f"{'+' if win else '-'}{abs(lp_change)} LP",
-            color=discord.Color.green() if win else discord.Color.red(),
+        await send_rank_embed(
+            channel,
+            win=False,
+            rank=["PLATINUM", "II", 23],
+            wins=120,
+            losses=10000,
+            lp_change=30,
+            daily_wins=5,
+            daily_losses=10,
+            loss_streak=7,
         )
-        buf = get_cropped_emblem(get_rank_emblem_url(rank[0]))
-        file = discord.File(buf, filename="emblem.png")
-        embed.set_thumbnail(url="attachment://emblem.png")
-        embed.add_field(name="Rank", value=f"{rank[0]} {rank[1]}, {rank[2]} LP", inline=False)
-        embed.add_field(name="Record", value=f"{wins}W / {losses}L", inline=True)
-        embed.add_field(name="Winrate", value=f"{winrate:.2f}%", inline=True)
-        embed.add_field(name="Today", value=f"{daily_wins}W / {daily_losses}L", inline=True)
-        if not win: embed.add_field(name="Loss Streak", value=f"{loss_streak} {get_loss_streak_face(loss_streak)}", inline=True)
-        embed.set_footer(text="Aaron Lin Rank Updates")
-        
-        await channel.send(embed=embed, file=file)
 
     # Required so prefix commands (if you add any with command_prefix="!") still work
     await bot.process_commands(message)

@@ -62,10 +62,91 @@ Wallets, the open market, pending bets, and recent settlement history live in `p
 ## Setup
 
 1. Copy `example.env` to `.env` and fill in tokens.
-2. Install dependencies (`discord.py`, `python-dotenv`, `Pillow`, `requests`).
+2. Install dependencies: `pip install -r requirements.txt`
 3. Run `python bot.py`.
 
 On first ready, the bot snapshots a.lin’s current rank into `rank_database.json` and opens a Poros market if one is not already open. Slash commands sync on startup.
+
+## Running locally (for developers)
+
+Do **not** use the production bot token. Two processes with the same token will disconnect each other, and local code would post into the live channel.
+
+Each developer creates their **own** Discord application and runs that bot against a test server. Production can stay down; you still test on your machine.
+
+### 1. Create a Discord application
+
+1. Open [Discord Developer Portal](https://discord.com/developers/applications) and sign in.
+2. **New Application** → name it something like `a.lin rank bot (yourname)`.
+3. Open **Bot**:
+   - **Reset Token** / **Copy** the token. This is `DISCORD_TOKEN`.
+   - Enable **Message Content Intent**.
+4. Open **OAuth2 → URL Generator**:
+   - Scopes: `bot` and `applications.commands`
+   - Bot permissions: `Send Messages`, `Embed Links`, `Attach Files`, `Use Slash Commands`
+   - Copy the URL, open it, and invite the bot into a **test server** (not the live community server, unless you are sure).
+
+### 2. Copy IDs from Discord
+
+In Discord: **User Settings → Advanced → Developer Mode** (on).
+
+Then:
+
+- Right-click the **test server icon** → **Copy Server ID**. This is `DISCORD_GUILD_ID`.
+- Right-click the **test channel** → **Copy Channel ID**. This is `CHANNEL_ID`.
+
+### 3. Local `.env`
+
+From the repo root:
+
+```
+copy example.env .env
+```
+
+Edit `.env` so it looks like this (your values, not prod):
+
+```
+BOT_ENV=dev
+DISCORD_TOKEN=paste-your-personal-bot-token
+DISCORD_GUILD_ID=paste-test-server-id
+CHANNEL_ID=paste-test-channel-id
+SKIP_RIOT=true
+DATABASE=rank_database.dev.json
+POROS_DATABASE=poros_database.dev.json
+
+POROS_STARTING_BALANCE=1000
+POROS_WIN_MULTIPLIER=1.8
+POROS_LOSS_MULTIPLIER=1.8
+POROS_RESET_COOLDOWN_HOURS=24
+POROS_LEADERBOARD_SIZE=10
+```
+
+Leave `RIOT_API` empty while `SKIP_RIOT=true`. You do not need a live ranked game to test Poros.
+
+### 4. Run
+
+```
+python bot.py
+```
+
+The bot should go **Do Not Disturb** with status `DEV · local`. In the test server, `/poro` and `/dev` should appear within a few seconds.
+
+If commands are missing: kick the bot, re-invite with `applications.commands`, restart `bot.py`.
+
+### 5. Test Poros without a real match
+
+1. `/poro balance` — you should get the starting wallet.
+2. `/poro bet` — pick win or loss and an amount.
+3. `/dev resolve` — pick **Win**, **Loss**, **Remake**, or **Unknown**.
+4. Check `/poro balance` and `/poro leaderboard`.
+
+`/dev resolve` is only registered when `BOT_ENV=dev`.
+
+### Rules
+
+- Never paste the production `DISCORD_TOKEN` into your `.env`.
+- Use `*.dev.json` database files so you do not overwrite live rank/Poro state if you share a machine.
+- Several people can test at once only if **each person has their own Discord application/token**.
+- Set `SKIP_RIOT=false` and a `RIOT_API` key only if you specifically want local Riot polling.
 
 ## Configuration
 
@@ -73,6 +154,9 @@ On first ready, the bot snapshots a.lin’s current rank into `rank_database.jso
 |---|---|---|
 | `DISCORD_TOKEN` | Bot token | — |
 | `CHANNEL_ID` | Channel for rank posts and Poro settlements | — |
+| `DISCORD_GUILD_ID` | Test server ID; guild-syncs slash commands in `BOT_ENV=dev` | — |
+| `BOT_ENV` | `prod` or `dev` | `prod` |
+| `SKIP_RIOT` | Skip Riot snapshot and polling (`true` by default in dev) | `false` (prod) / `true` (dev) |
 | `RIOT_API` | Riot Games API key | — |
 | `PUUID` | Tracked account PUUID | — |
 | `DATABASE` | Rank snapshot file | `rank_database.json` |
