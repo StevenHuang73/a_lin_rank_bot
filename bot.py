@@ -12,6 +12,7 @@ RANK_EMBLEM_TEMPLATE = "https://raw.communitydragon.org/latest/plugins/rcp-fe-lo
 PUUID = os.getenv("PUUID")
 
 LOSS_STREAK_FACES = {
+    #Add new faces if you want
     1: "😕",
     2: "😔",
     3: "😞",
