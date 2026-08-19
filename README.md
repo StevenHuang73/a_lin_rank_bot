@@ -26,8 +26,7 @@ Poros is the in-bot currency. Anyone in the server can bet on whether a.lin wins
 |---|---|
 | `/bet` | Wager Poros on **win** or **loss** |
 | `/undo` | Cancel your pending bet and refund the stake |
-| `/balance` | Wallet, bet record, Rich List rank, and any pending bet |
-| `/leaderboard` | Poro Rich List (top balances) |
+| `/balance` | Wallet, bet record, leaderboard (top balances) |
 | `/poro reset` | Refill to the starting amount if you are broke |
 | `/poro help` | Rules, odds, and reset policy |
 
@@ -168,4 +167,4 @@ If commands are missing: kick the bot, re-invite with `applications.commands`, r
 | `POROS_WIN_MULTIPLIER` | Payout on a correct win bet | `1.8` |
 | `POROS_LOSS_MULTIPLIER` | Payout on a correct loss bet | `1.8` |
 | `POROS_RESET_COOLDOWN_HOURS` | Hours between resets | `24` |
-| `POROS_LEADERBOARD_SIZE` | Rich List length | `10` |
+| `POROS_LEADERBOARD_SIZE` | Leaderboard length | `10` |

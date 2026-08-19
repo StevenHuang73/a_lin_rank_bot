@@ -327,11 +327,11 @@ async def undo(interaction: discord.Interaction):
     await interaction.response.send_message(embed=embed)
 
 
-@bot.tree.command(name="leaderboard", description="Poro Rich List")
+@bot.tree.command(name="leaderboard", description="Poro Leaderboards")
 async def leaderboard(interaction: discord.Interaction):
     rows = poros.leaderboard()
     embed = discord.Embed(
-        title="Poro Rich List",
+        title="Poro Leaderboards",
         color=discord.Color.gold(),
     )
     if not rows:
@@ -362,7 +362,7 @@ async def balance(interaction: discord.Interaction):
     embed.add_field(name="Balance", value=f"{view['balance']} Poros", inline=True)
     rank = view["rank"]
     embed.add_field(
-        name="Rich List",
+        name="Leaderboard",
         value=f"#{rank} of {view['wallet_count']}" if rank else "Unranked",
         inline=True,
     )
@@ -420,7 +420,7 @@ async def poro_help(interaction: discord.Interaction):
             "`/bet` — wager on win or loss\n"
             "`/undo` — cancel your pending bet\n"
             "`/balance` — wallet and record\n"
-            "`/leaderboard` — Poro Rich List\n"
+            "`/leaderboard` — Poro Leaderboards\n"
             "`/poro reset` — refill at 0 Poros"
         ),
         inline=False,
