@@ -25,8 +25,9 @@ Poros is the in-bot currency. Anyone in the server can bet on whether a.lin wins
 | Command | What it does |
 |---|---|
 | `/bet` | Wager Poros on **win** or **loss** |
+| `/undo` | Cancel your pending bet and refund the stake |
+| `/balance` | Wallet, bet record, Rich List rank, and any pending bet |
 | `/leaderboard` | Poro Rich List (top balances) |
-| `/poro balance` | Wallet, bet record, Rich List rank, and any pending bet |
 | `/poro reset` | Refill to the starting amount if you are broke |
 | `/poro help` | Rules, odds, and reset policy |
 
@@ -38,8 +39,9 @@ Poros is the in-bot currency. Anyone in the server can bet on whether a.lin wins
 2. You pick a side and a wager. The stake is taken from your wallet immediately.
 3. Same-side adds are allowed and stack into one position. There is no max bet besides your balance.
 4. You cannot hedge. If you already bet **win**, you cannot also bet **loss** on the same game (and vice versa).
-5. When the match resolves, winners are paid `floor(stake × multiplier)` back into their wallet. Losers keep the loss of their stake.
-6. Remakes and unresolved matches refund every pending bet, then a new market opens.
+5. `/undo` cancels your pending bet and returns the full stake, as long as the market is still open.
+6. When the match resolves, winners are paid `floor(stake × multiplier)` back into their wallet. Losers keep the loss of their stake.
+7. Remakes and unresolved matches refund every pending bet, then a new market opens.
 
 Default odds are **1.8x** on both sides. Example: bet 100 Poros on win, a.lin wins → you receive 180 Poros (net +80).
 
@@ -128,16 +130,16 @@ Leave `RIOT_API` empty while `SKIP_RIOT=true`. You do not need a live ranked gam
 python bot.py
 ```
 
-The bot should go **Do Not Disturb** with status `DEV · local`. In the test server, `/bet`, `/leaderboard`, `/poro`, and `/dev` should appear within a few seconds.
+The bot should go **Do Not Disturb** with status `DEV · local`. In the test server, `/bet`, `/undo`, `/balance`, `/leaderboard`, `/poro`, and `/dev` should appear within a few seconds.
 
 If commands are missing: kick the bot, re-invite with `applications.commands`, restart `bot.py`.
 
 ### 5. Test Poros without a real match
 
-1. `/poro balance` — you should get the starting wallet.
+1. `/balance` — you should get the starting wallet.
 2. `/bet` — pick win or loss and an amount.
 3. `/dev resolve` — pick **Win**, **Loss**, **Remake**, or **Unknown**.
-4. Check `/poro balance` and `/leaderboard`.
+4. Check `/balance` and `/leaderboard`.
 
 `/dev resolve` is only registered when `BOT_ENV=dev`.
 

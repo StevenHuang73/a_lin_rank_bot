@@ -304,6 +304,27 @@ async def bet(
     await interaction.response.send_message(embed=embed)
 
 
+@bot.tree.command(name="undo", description="Cancel your pending Poro bet and get the stake back")
+async def undo(interaction: discord.Interaction):
+    try:
+        result = poros.undo_bet(str(interaction.user.id))
+    except poros.PorosError as exc:
+        await interaction.response.send_message(str(exc), ephemeral=True)
+        return
+
+    embed = discord.Embed(
+        title="Bet Undone",
+        description=(
+            f"{interaction.user.mention} cancelled **{result['refunded']}** Poros "
+            f"on **{result['prediction']}**."
+        ),
+        color=discord.Color.gold(),
+    )
+    embed.add_field(name="Returned", value=f"{result['refunded']} Poros", inline=True)
+    embed.add_field(name="Balance", value=f"{result['balance']} Poros", inline=True)
+    await interaction.response.send_message(embed=embed)
+
+
 @bot.tree.command(name="leaderboard", description="Poro Rich List")
 async def leaderboard(interaction: discord.Interaction):
     rows = poros.leaderboard()
@@ -312,7 +333,7 @@ async def leaderboard(interaction: discord.Interaction):
         color=discord.Color.gold(),
     )
     if not rows:
-        embed.description = "No wallets yet. Use `/poro balance` to get started."
+        embed.description = "No wallets yet. Use `/balance` to get started."
         await interaction.response.send_message(embed=embed)
         return
 
@@ -326,11 +347,11 @@ async def leaderboard(interaction: discord.Interaction):
     await interaction.response.send_message(embed=embed)
 
 
-poro = app_commands.Group(name="poro", description="Poro wallet and help")
+poro = app_commands.Group(name="poro", description="Poro reset and help")
 
 
-@poro.command(name="balance", description="Check your Poro balance")
-async def poro_balance(interaction: discord.Interaction):
+@bot.tree.command(name="balance", description="Check your Poro balance")
+async def balance(interaction: discord.Interaction):
     view = poros.get_balance_view(str(interaction.user.id))
     embed = discord.Embed(
         title="Poro Wallet",
@@ -395,8 +416,9 @@ async def poro_help(interaction: discord.Interaction):
         name="Commands",
         value=(
             "`/bet` — wager on win or loss\n"
+            "`/undo` — cancel your pending bet\n"
+            "`/balance` — wallet and record\n"
             "`/leaderboard` — Poro Rich List\n"
-            "`/poro balance` — wallet and record\n"
             "`/poro reset` — refill at 0 Poros"
         ),
         inline=False,
@@ -411,6 +433,7 @@ async def poro_help(interaction: discord.Interaction):
         value=(
             f"New players start with **{poros.STARTING_BALANCE}** Poros.\n"
             "You can add more on the same side, but you cannot hedge both win and loss.\n"
+            "`/undo` returns your pending stake before the match resolves.\n"
             "Stake is taken when you bet. Winners get stake × odds back.\n"
             "Remakes and unresolved matches refund bets.\n"
             f"Reset is only at 0 Poros, once every **{int(poros.RESET_COOLDOWN_HOURS)}** hours."

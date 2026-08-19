@@ -263,7 +263,7 @@ def place_bet(user_id: str, prediction: str, amount: int) -> dict:
             raise PorosError(
                 "Opposite-side bets are not allowed on the same game. "
                 f"You already have {existing['amount']} Poros on "
-                f"**{existing['prediction']}**."
+                f"**{existing['prediction']}**. Use `/undo` to cancel that bet first."
             )
 
         wallet["balance"] -= amount
@@ -300,6 +300,36 @@ def place_bet(user_id: str, prediction: str, amount: int) -> dict:
             "potential_payout": _payout_amount(bet["amount"], multiplier),
             "aggregated": aggregated,
             "market_id": market["market_id"],
+        }
+
+
+def undo_bet(user_id: str) -> dict:
+    with _lock:
+        data = _load()
+        market = data.get("current_market")
+        if market is None or market.get("status") != "open":
+            raise PorosError("No open market to undo a bet on.")
+
+        existing = _pending_bet_for_user(data, user_id, market["market_id"])
+        if existing is None:
+            raise PorosError("You don't have a pending bet on the next game.")
+
+        wallet = _ensure_wallet(data, user_id)
+        refund = existing["amount"]
+        wallet["balance"] += refund
+        wallet["total_wagered"] = max(0, wallet["total_wagered"] - refund)
+
+        data["bets"] = [
+            bet
+            for bet in data["bets"]
+            if bet.get("bet_id") != existing["bet_id"]
+        ]
+        _save(data)
+
+        return {
+            "refunded": refund,
+            "prediction": existing["prediction"],
+            "balance": wallet["balance"],
         }
 
 
