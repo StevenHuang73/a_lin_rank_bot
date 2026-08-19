@@ -67,6 +67,8 @@ class MyBot(commands.Bot):
         if not self.poll_started:
             self.poll_started = True
             self.loop.create_task(poll_for_new_match(on_new_match=self.handle_new_match, puuid=PUUID))
+        else:
+            print("Polling already started")
 
     async def handle_new_match(self, match_id: str):
         channel = self.get_channel(int(CHANNEL_ID))
@@ -92,7 +94,6 @@ class MyBot(commands.Bot):
 
         total_games = wins + losses
         winrate = (wins / total_games * 100) if total_games > 0 else 0.0
-
         embed = discord.Embed(
             title="VICTORY! 🟢" if win else "DEFEAT 🔴",
             description=f"{'+' if win else '-'}{abs(lp_change)} LP",
@@ -129,17 +130,22 @@ async def on_message(message):
 
     if message.content.lower() == "ping":
         channel = bot.get_channel(int(CHANNEL_ID))
-        win = True
+        
+        win = False
         rank = ['PLATINUM', "II", 23]
         wins = 120
         losses = 10000
         lp_change = 30
+        daily_wins = 5
+        daily_losses = 10
+        loss_streak = 7
+
 
         total_games = wins + losses
         winrate = (wins / total_games * 100) if total_games > 0 else 0.0
 
         embed = discord.Embed(
-            title="VICTORY!" if win else "DEFEAT",
+            title="VICTORY! 🟢" if win else "DEFEAT 🔴",
             description=f"{'+' if win else '-'}{abs(lp_change)} LP",
             color=discord.Color.green() if win else discord.Color.red(),
         )
@@ -149,8 +155,10 @@ async def on_message(message):
         embed.add_field(name="Rank", value=f"{rank[0]} {rank[1]}, {rank[2]} LP", inline=False)
         embed.add_field(name="Record", value=f"{wins}W / {losses}L", inline=True)
         embed.add_field(name="Winrate", value=f"{winrate:.2f}%", inline=True)
-        embed.set_footer(text="Aaron Lin")
-
+        embed.add_field(name="Today", value=f"{daily_wins}W / {daily_losses}L", inline=True)
+        if not win: embed.add_field(name="Loss Streak", value=f"{loss_streak} {get_loss_streak_face(loss_streak)}", inline=True)
+        embed.set_footer(text="Aaron Lin Rank Updates")
+        
         await channel.send(embed=embed, file=file)
 
     # Required so prefix commands (if you add any with command_prefix="!") still work

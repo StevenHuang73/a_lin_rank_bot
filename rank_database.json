@@ -1,17 +1,15 @@
 {
     "tier": "PLATINUM",
-    "rank": "II",
-    "leaguePoints": 18,
-    "wins": 125,
-    "losses": 157,
+    "rank": "I",
+    "leaguePoints": 16,
+    "wins": 131,
+    "losses": 158,
     "hotStreak": false,
-    "last_match_id": "NA1_5623802894",
-
+    "last_match_id": "NA1_5624096144",
     "daily": {
         "date": "2026-08-18",
-        "wins": 0,
-        "losses": 0
+        "wins": 6,
+        "losses": 1
     },
-
     "loss_streak": 0
 }

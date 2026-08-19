@@ -54,6 +54,8 @@ def get_account_info(puuid=PUUID):
     )
 
     response = requests.get(league_v4_url, headers=headers)
+    print("X-App-Rate-Limit:", response.headers.get("X-App-Rate-Limit"))
+    print("X-App-Rate-Limit-Count:", response.headers.get("X-App-Rate-Limit-Count"))
     response.raise_for_status()
 
     lv4_response = response.json()
@@ -89,6 +91,8 @@ def get_latest_match_id(puuid=PUUID):
     )
 
     response = requests.get(matches_url, headers=headers)
+    print("X-App-Rate-Limit:", response.headers.get("X-App-Rate-Limit"))
+    print("X-App-Rate-Limit-Count:", response.headers.get("X-App-Rate-Limit-Count"))
     response.raise_for_status()
 
     matches = response.json()
