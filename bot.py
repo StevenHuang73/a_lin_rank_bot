@@ -175,6 +175,16 @@ class MyBot(commands.Bot):
             channel,
             poros.resolve_market("win" if result["win"] else "loss", match_id=match_id),
         )
+        
+        watch_channel = self.get_channel(1166250483363610624)  # int, not str
+        if watch_channel is not None:
+            grant_result = await self._grant_watchers_poros(watch_channel)
+            if grant_result["granted"]:
+                mentions = ", ".join(f"<@{r['user_id']}>" for r in grant_result["granted"])
+                await channel.send(f"🎁 +{grant_result['amount']} Poros to voice watchers: {mentions}")
+        else:
+            print("WARNING: watch_channel not found, skipping Poro grant")
+        
 
     async def simulate_match(self, channel, outcome: str, match_id: str):
         if outcome == "remake":
@@ -214,6 +224,27 @@ class MyBot(commands.Bot):
         text = poros.format_settlement(settlement)
         if text:
             await channel.send(text)
+    
+    async def _grant_watchers_poros(self, channel, amount = 200):
+        granted = []
+        failed = []
+
+        for member in channel.members:
+            if member.bot:
+                continue
+            try:
+                result = poros.adjust_balance(str(member.id), amount)
+                granted.append({"user_id": str(member.id), "balance": result["balance"]})
+            except poros.PorosError as e:
+                failed.append({"user_id": str(member.id), "error": str(e)})
+
+        return {
+            "channel_id": str(channel.id),
+            "amount": amount,
+            "granted": granted,
+            "failed": failed,
+        }
+        
 
 intents = discord.Intents.default()
 intents.message_content = True

@@ -590,3 +590,37 @@ def format_settlement(settlement: dict) -> str | None:
                 f"<@{row['user_id']}> lost {row['amount']} Poros (bet on {row['prediction']})"
             )
     return "\n".join(lines)
+
+def adjust_balance(user_id: str, amount: int, reason: str | None = None) -> dict:
+    """Add or subtract Poros from a user's wallet.
+
+    Positive `amount` credits the account, negative `amount` debits it.
+    Raises PorosError if the debit would take the balance below zero.
+    """
+    if isinstance(amount, bool) or not isinstance(amount, int) or amount == 0:
+        raise PorosError("Adjustment must be a non-zero whole number of Poros.")
+
+    with _lock:
+        data = _load()
+        wallet = _ensure_wallet(data, user_id)
+
+        new_balance = wallet["balance"] + amount
+        if new_balance < 0:
+            raise PorosError(
+                f"Cannot subtract {abs(amount)} Poros; user only has {wallet['balance']}."
+            )
+
+        wallet["balance"] = new_balance
+        if amount > 0:
+            wallet["total_won"] += amount
+        else:
+            wallet["total_lost"] += abs(amount)
+
+        _save(data)
+
+        return {
+            "user_id": user_id,
+            "amount": amount,
+            "balance": wallet["balance"],
+            "reason": reason,
+        }
