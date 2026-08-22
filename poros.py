@@ -139,13 +139,24 @@ def _archive_market(data: dict, reason: str) -> None:
         }
     )
     data["history"] = data["history"][-HISTORY_CAP:]
+    
+def _pool_totals(data: dict, market_id: str) -> tuple[int, dict[str, int]]:
+    """Total pool and per-side totals for all pending bets in a market."""
+    total_pool = 0
+    side_totals = {"win": 0, "loss": 0}
+    for bet in data["bets"]:
+        if bet["status"] == "pending" and bet["market_id"] == market_id:
+            total_pool += bet["amount"]
+            side_totals[bet["prediction"]] += bet["amount"]
+    return total_pool, side_totals
 
 
-def _multiplier_for(market: dict, prediction: str) -> float:
-    if prediction == "win":
-        return float(market["multiplier_win"])
-    return float(market["multiplier_loss"])
-
+def _dynamic_multiplier(total_pool: int, side_amount: int, fallback: float = 1.2) -> float:
+    """Baseline 1.2x plus opposing-pool/side ratio. Returns `fallback` if no one is on that side."""
+    if side_amount <= 0:
+        return fallback
+    opposing_amount = total_pool - side_amount
+    return 1.2 + (opposing_amount / side_amount)
 
 def _payout_amount(stake: int, multiplier: float) -> int:
     return math.floor(stake * multiplier)
@@ -231,11 +242,18 @@ def get_market_info() -> dict | None:
         market = data.get("current_market")
         if market is None:
             return None
-        pending_count = sum(1 for bet in data["bets"] if bet["status"] == "pending")
-        total_staked = sum(bet["amount"] for bet in data["bets"] if bet["status"] == "pending")
+
+        total_pool, side_totals = _pool_totals(data, market["market_id"])
         info = dict(market)
-        info["pending_bets"] = pending_count
-        info["total_staked"] = total_staked
+        info["pending_bets"] = sum(
+            1 for bet in data["bets"]
+            if bet["status"] == "pending" and bet["market_id"] == market["market_id"]
+        )
+        info["total_staked"] = total_pool
+        info["win_pool"] = side_totals["win"]
+        info["loss_pool"] = side_totals["loss"]
+        info["estimated_win_multiplier"] = _dynamic_multiplier(total_pool, side_totals["win"])
+        info["estimated_loss_multiplier"] = _dynamic_multiplier(total_pool, side_totals["loss"])
         return info
 
 
@@ -288,16 +306,21 @@ def place_bet(user_id: str, prediction: str, amount: int) -> dict:
             }
             data["bets"].append(bet)
 
+        # Estimate odds against the pool as it stands right now, including
+        # this bet. This WILL change as more bets come in before resolution.
+        total_pool, side_totals = _pool_totals(data, market["market_id"])
+        estimated_multiplier = _dynamic_multiplier(total_pool, side_totals[prediction])
+
         _save(data)
 
-        multiplier = _multiplier_for(market, prediction)
         return {
             "amount": bet["amount"],
             "added": amount,
             "prediction": prediction,
             "balance": wallet["balance"],
-            "multiplier": multiplier,
-            "potential_payout": _payout_amount(bet["amount"], multiplier),
+            "multiplier": estimated_multiplier,
+            "potential_payout": _payout_amount(bet["amount"], estimated_multiplier),
+            "estimated": True,
             "aggregated": aggregated,
             "market_id": market["market_id"],
         }
@@ -446,17 +469,26 @@ def resolve_market(outcome: str, match_id: str | None = None) -> dict:
         paid = 0
         lost = 0
 
-        for bet in data["bets"]:
-            if bet["status"] != "pending" or bet["market_id"] != market["market_id"]:
-                continue
+        pending_bets = [
+            bet for bet in data["bets"]
+            if bet["status"] == "pending" and bet["market_id"] == market["market_id"]
+        ]
 
+        total_pool, side_totals = _pool_totals(data, market["market_id"])
+        dynamic_multiplier = _dynamic_multiplier(total_pool, side_totals[outcome])
+
+        # Dynamic multiplier: baseline 1.2x plus pool/winning-side ratio.
+        # Only meaningful when someone is on the winning side; if nobody is,
+        # paid stays 0 and this value is never used for a payout.
+
+        for bet in pending_bets:
             wallet = _ensure_wallet(data, bet["user_id"])
             won = bet["prediction"] == outcome
             if won:
-                multiplier = _multiplier_for(market, bet["prediction"])
-                payout = _payout_amount(bet["amount"], multiplier)
+                payout = _payout_amount(bet["amount"], dynamic_multiplier)
                 bet["status"] = "won"
                 bet["payout"] = payout
+                bet["multiplier"] = dynamic_multiplier
                 wallet["balance"] += payout
                 wallet["total_won"] += payout
                 wallet["bets_won"] += 1
@@ -465,6 +497,7 @@ def resolve_market(outcome: str, match_id: str | None = None) -> dict:
                 payout = 0
                 bet["status"] = "lost"
                 bet["payout"] = 0
+                bet["multiplier"] = 0.0   # <-- add this
                 wallet["total_lost"] += bet["amount"]
                 wallet["bets_lost"] += 1
                 lost += 1
@@ -485,6 +518,8 @@ def resolve_market(outcome: str, match_id: str | None = None) -> dict:
         market["match_id"] = match_id
         market["resolution"] = outcome
         market["resolved_at"] = now
+        market["dynamic_multiplier"] = dynamic_multiplier
+        market["total_pool"] = total_pool
         _archive_market(data, reason=outcome)
         _open_new_market(data)
         _save(data)

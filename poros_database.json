@@ -1,31 +1,31 @@
 {
     "wallets": {
         "405837211263696918": {
-            "balance": 452,
-            "total_wagered": 3340,
-            "total_won": 2792,
-            "total_lost": 1400,
-            "bets_won": 5,
-            "bets_lost": 3,
+            "balance": 5259,
+            "total_wagered": 5341,
+            "total_won": 9600,
+            "total_lost": 1900,
+            "bets_won": 9,
+            "bets_lost": 4,
             "reset_count": 0,
             "last_reset_at": null,
             "created_at": "2026-08-19T16:39:09.840012+00:00"
         },
         "345435813619957762": {
-            "balance": 0,
-            "total_wagered": 2800,
-            "total_won": 1800,
+            "balance": 2200,
+            "total_wagered": 3800,
+            "total_won": 4000,
             "total_lost": 1800,
-            "bets_won": 1,
+            "bets_won": 2,
             "bets_lost": 1,
-            "reset_count": 0,
-            "last_reset_at": null,
+            "reset_count": 1,
+            "last_reset_at": "2026-08-20T21:26:37.391785+00:00",
             "created_at": "2026-08-20T02:58:38.245515+00:00"
         },
         "249765806492221441": {
-            "balance": 5912,
+            "balance": 6512,
             "total_wagered": 6140,
-            "total_won": 11052,
+            "total_won": 11652,
             "total_lost": 0,
             "bets_won": 5,
             "bets_lost": 0,
@@ -34,66 +34,66 @@
             "created_at": "2026-08-20T02:59:23.810280+00:00"
         },
         "357281151171166208": {
-            "balance": 2500,
-            "total_wagered": 3000,
-            "total_won": 4500,
-            "total_lost": 500,
-            "bets_won": 5,
-            "bets_lost": 1,
+            "balance": 3929,
+            "total_wagered": 6800,
+            "total_won": 9729,
+            "total_lost": 2000,
+            "bets_won": 9,
+            "bets_lost": 4,
             "reset_count": 0,
             "last_reset_at": null,
             "created_at": "2026-08-20T04:57:30.425648+00:00"
         },
         "748975890620350554": {
-            "balance": 362,
-            "total_wagered": 1090,
-            "total_won": 452,
-            "total_lost": 950,
-            "bets_won": 2,
-            "bets_lost": 2,
+            "balance": 2576,
+            "total_wagered": 5795,
+            "total_won": 7371,
+            "total_lost": 2513,
+            "bets_won": 9,
+            "bets_lost": 5,
             "reset_count": 0,
             "last_reset_at": null,
             "created_at": "2026-08-20T05:49:00.888098+00:00"
         },
         "347202907818426370": {
-            "balance": 2420,
-            "total_wagered": 2900,
-            "total_won": 4320,
-            "total_lost": 0,
-            "bets_won": 4,
-            "bets_lost": 0,
+            "balance": 5344,
+            "total_wagered": 6120,
+            "total_won": 10464,
+            "total_lost": 1600,
+            "bets_won": 6,
+            "bets_lost": 2,
             "reset_count": 0,
             "last_reset_at": null,
             "created_at": "2026-08-20T05:49:37.257930+00:00"
         },
         "525825288932818974": {
-            "balance": 4200,
-            "total_wagered": 6000,
-            "total_won": 9200,
-            "total_lost": 0,
-            "bets_won": 5,
-            "bets_lost": 0,
+            "balance": 5600,
+            "total_wagered": 11002,
+            "total_won": 15602,
+            "total_lost": 4000,
+            "bets_won": 9,
+            "bets_lost": 4,
             "reset_count": 0,
             "last_reset_at": null,
             "created_at": "2026-08-20T05:50:06.315521+00:00"
         },
         "405510807879811072": {
             "balance": 0,
-            "total_wagered": 2000,
+            "total_wagered": 3000,
             "total_won": 0,
-            "total_lost": 2000,
+            "total_lost": 3000,
             "bets_won": 0,
-            "bets_lost": 2,
-            "reset_count": 1,
-            "last_reset_at": "2026-08-20T06:34:37.712208+00:00",
+            "bets_lost": 3,
+            "reset_count": 2,
+            "last_reset_at": "2026-08-21T17:39:11.893644+00:00",
             "created_at": "2026-08-20T05:50:25.408699+00:00"
         },
         "372224225471102976": {
-            "balance": 1800,
-            "total_wagered": 2000,
-            "total_won": 1800,
+            "balance": 2942,
+            "total_wagered": 3000,
+            "total_won": 3942,
             "total_lost": 1000,
-            "bets_won": 1,
+            "bets_won": 2,
             "bets_lost": 1,
             "reset_count": 1,
             "last_reset_at": "2026-08-20T07:09:58.131766+00:00",
@@ -111,31 +111,31 @@
             "created_at": "2026-08-20T06:36:39.368442+00:00"
         },
         "365942854809419786": {
-            "balance": 1620,
-            "total_wagered": 1200,
-            "total_won": 1820,
-            "total_lost": 100,
-            "bets_won": 4,
-            "bets_lost": 1,
+            "balance": 3400,
+            "total_wagered": 2300,
+            "total_won": 4700,
+            "total_lost": 600,
+            "bets_won": 7,
+            "bets_lost": 3,
             "reset_count": 0,
             "last_reset_at": null,
             "created_at": "2026-08-20T06:46:17.407547+00:00"
         },
         "279415836484173825": {
-            "balance": 1320,
-            "total_wagered": 400,
-            "total_won": 720,
+            "balance": 2576,
+            "total_wagered": 1720,
+            "total_won": 3296,
             "total_lost": 0,
-            "bets_won": 1,
+            "bets_won": 2,
             "bets_lost": 0,
             "reset_count": 0,
             "last_reset_at": null,
             "created_at": "2026-08-20T06:47:58.229539+00:00"
         },
         "320643823287926785": {
-            "balance": 200,
+            "balance": 800,
             "total_wagered": 1000,
-            "total_won": 200,
+            "total_won": 800,
             "total_lost": 1000,
             "bets_won": 0,
             "bets_lost": 1,
@@ -144,926 +144,927 @@
             "created_at": "2026-08-20T07:09:34.521037+00:00"
         },
         "333071784679309313": {
-            "balance": 1520,
-            "total_wagered": 400,
-            "total_won": 920,
-            "total_lost": 0,
-            "bets_won": 2,
-            "bets_lost": 0,
+            "balance": 4437,
+            "total_wagered": 3902,
+            "total_won": 7339,
+            "total_lost": 700,
+            "bets_won": 8,
+            "bets_lost": 2,
             "reset_count": 0,
             "last_reset_at": null,
             "created_at": "2026-08-20T07:10:04.126711+00:00"
         },
         "1117658843602767954": {
-            "balance": 1400,
-            "total_wagered": 500,
-            "total_won": 900,
-            "total_lost": 0,
-            "bets_won": 1,
-            "bets_lost": 0,
+            "balance": 3962,
+            "total_wagered": 4650,
+            "total_won": 7612,
+            "total_lost": 500,
+            "bets_won": 7,
+            "bets_lost": 1,
             "reset_count": 0,
             "last_reset_at": null,
             "created_at": "2026-08-20T08:04:06.332929+00:00"
+        },
+        "258818209573109761": {
+            "balance": 1000,
+            "total_wagered": 0,
+            "total_won": 0,
+            "total_lost": 0,
+            "bets_won": 0,
+            "bets_lost": 0,
+            "reset_count": 0,
+            "last_reset_at": null,
+            "created_at": "2026-08-20T20:45:33.429396+00:00"
+        },
+        "395306767304622080": {
+            "balance": 6272,
+            "total_wagered": 10785,
+            "total_won": 16057,
+            "total_lost": 1600,
+            "bets_won": 8,
+            "bets_lost": 2,
+            "reset_count": 0,
+            "last_reset_at": null,
+            "created_at": "2026-08-20T22:58:46.138309+00:00"
+        },
+        "326498285978124289": {
+            "balance": 1219,
+            "total_wagered": 2100,
+            "total_won": 2319,
+            "total_lost": 500,
+            "bets_won": 3,
+            "bets_lost": 1,
+            "reset_count": 0,
+            "last_reset_at": null,
+            "created_at": "2026-08-21T05:01:23.212429+00:00"
+        },
+        "274023011688906753": {
+            "balance": 656,
+            "total_wagered": 1500,
+            "total_won": 1156,
+            "total_lost": 800,
+            "bets_won": 1,
+            "bets_lost": 2,
+            "reset_count": 0,
+            "last_reset_at": null,
+            "created_at": "2026-08-21T05:02:57.818523+00:00"
+        },
+        "234912235770740737": {
+            "balance": 1200,
+            "total_wagered": 0,
+            "total_won": 200,
+            "total_lost": 0,
+            "bets_won": 0,
+            "bets_lost": 0,
+            "reset_count": 0,
+            "last_reset_at": null,
+            "created_at": "2026-08-22T00:09:19.685868+00:00"
         }
     },
     "current_market": {
-        "market_id": "809d7487-b05d-4c7a-9bc7-be9bb3aed74f",
+        "market_id": "3eec5bce-8de2-4a0c-807a-55607df90e98",
         "type": "next_game_wl",
         "status": "open",
-        "created_at": "2026-08-20T20:26:36.523138+00:00",
+        "created_at": "2026-08-22T06:25:51.073383+00:00",
         "multiplier_win": 1.8,
         "multiplier_loss": 1.8,
         "match_id": null,
         "resolution": null,
         "resolved_at": null
     },
-    "bets": [
-        {
-            "bet_id": "d35b0a34-2ce0-41b4-ab5a-c5ce7e532601",
-            "market_id": "809d7487-b05d-4c7a-9bc7-be9bb3aed74f",
-            "user_id": "525825288932818974",
-            "prediction": "win",
-            "amount": 1000,
-            "status": "pending",
-            "payout": 0,
-            "placed_at": "2026-08-20T20:28:38.316191+00:00",
-            "resolved_at": null
-        },
-        {
-            "bet_id": "61a71f6a-e21f-4895-8855-d9c7663c42ff",
-            "market_id": "809d7487-b05d-4c7a-9bc7-be9bb3aed74f",
-            "user_id": "365942854809419786",
-            "prediction": "win",
-            "amount": 200,
-            "status": "pending",
-            "payout": 0,
-            "placed_at": "2026-08-20T20:34:15.193624+00:00",
-            "resolved_at": null
-        },
-        {
-            "bet_id": "fd1b2f33-c54e-44b5-8c03-3ca30cc379d8",
-            "market_id": "809d7487-b05d-4c7a-9bc7-be9bb3aed74f",
-            "user_id": "347202907818426370",
-            "prediction": "loss",
-            "amount": 500,
-            "status": "pending",
-            "payout": 0,
-            "placed_at": "2026-08-20T20:34:36.483880+00:00",
-            "resolved_at": null
-        },
-        {
-            "bet_id": "06c633ea-1706-412c-afe5-7f0b935c68dc",
-            "market_id": "809d7487-b05d-4c7a-9bc7-be9bb3aed74f",
-            "user_id": "405837211263696918",
-            "prediction": "win",
-            "amount": 500,
-            "status": "pending",
-            "payout": 0,
-            "placed_at": "2026-08-20T20:37:20.498959+00:00",
-            "resolved_at": null
-        }
-    ],
+    "bets": [],
     "history": [
         {
             "market": {
-                "market_id": "fcb83c7d-b6be-400c-bd1a-15d08903a8a7",
+                "market_id": "62f46c50-8f39-4f39-9aa6-fddda731911c",
                 "type": "next_game_wl",
                 "status": "resolved",
-                "created_at": "2026-08-19T16:36:34.415701+00:00",
+                "created_at": "2026-08-21T02:13:44.484586+00:00",
                 "multiplier_win": 1.8,
                 "multiplier_loss": 1.8,
-                "match_id": "NA1_5624761354",
-                "resolution": "loss",
-                "resolved_at": "2026-08-20T02:44:05.194848+00:00"
-            },
-            "bets": [
-                {
-                    "bet_id": "3b60c573-5195-4da7-84e4-cef2a1c50f0d",
-                    "market_id": "fcb83c7d-b6be-400c-bd1a-15d08903a8a7",
-                    "user_id": "405837211263696918",
-                    "prediction": "win",
-                    "amount": 100,
-                    "status": "lost",
-                    "payout": 0,
-                    "placed_at": "2026-08-19T16:39:40.669949+00:00",
-                    "resolved_at": "2026-08-20T02:44:05.194848+00:00"
-                }
-            ],
-            "reason": "loss",
-            "settled_at": "2026-08-20T02:44:05.194865+00:00"
-        },
-        {
-            "market": {
-                "market_id": "eaa4798e-24ce-4eda-8c2f-765fa38bb9bc",
-                "type": "next_game_wl",
-                "status": "resolved",
-                "created_at": "2026-08-20T02:44:05.194891+00:00",
-                "multiplier_win": 1.8,
-                "multiplier_loss": 1.8,
-                "match_id": "NA1_5624797948",
-                "resolution": "loss",
-                "resolved_at": "2026-08-20T03:15:46.277118+00:00"
-            },
-            "bets": [
-                {
-                    "bet_id": "0fcfd5d5-9330-4fb4-8ec7-80b41e707721",
-                    "market_id": "eaa4798e-24ce-4eda-8c2f-765fa38bb9bc",
-                    "user_id": "345435813619957762",
-                    "prediction": "loss",
-                    "amount": 1000,
-                    "status": "won",
-                    "payout": 1800,
-                    "placed_at": "2026-08-20T02:58:38.245544+00:00",
-                    "resolved_at": "2026-08-20T03:15:46.277118+00:00"
-                },
-                {
-                    "bet_id": "d315324f-5f79-4b5b-b551-bc565f1c3220",
-                    "market_id": "eaa4798e-24ce-4eda-8c2f-765fa38bb9bc",
-                    "user_id": "405837211263696918",
-                    "prediction": "loss",
-                    "amount": 300,
-                    "status": "won",
-                    "payout": 540,
-                    "placed_at": "2026-08-20T02:59:09.563493+00:00",
-                    "resolved_at": "2026-08-20T03:15:46.277118+00:00"
-                },
-                {
-                    "bet_id": "359438e9-c78d-4b0f-8e8d-1b5004ca962c",
-                    "market_id": "eaa4798e-24ce-4eda-8c2f-765fa38bb9bc",
-                    "user_id": "249765806492221441",
-                    "prediction": "loss",
-                    "amount": 1000,
-                    "status": "won",
-                    "payout": 1800,
-                    "placed_at": "2026-08-20T02:59:23.810307+00:00",
-                    "resolved_at": "2026-08-20T03:15:46.277118+00:00"
-                }
-            ],
-            "reason": "loss",
-            "settled_at": "2026-08-20T03:15:46.277137+00:00"
-        },
-        {
-            "market": {
-                "market_id": "be247122-59ee-4b65-ac4d-cfc912af9696",
-                "type": "next_game_wl",
-                "status": "resolved",
-                "created_at": "2026-08-20T03:15:46.277156+00:00",
-                "multiplier_win": 1.8,
-                "multiplier_loss": 1.8,
-                "match_id": "NA1_5624817336",
-                "resolution": "loss",
-                "resolved_at": "2026-08-20T03:39:25.160758+00:00"
-            },
-            "bets": [],
-            "reason": "loss",
-            "settled_at": "2026-08-20T03:39:25.160770+00:00"
-        },
-        {
-            "market": {
-                "market_id": "20946a0d-9a4d-4aaf-9949-bbb23df1d317",
-                "type": "next_game_wl",
-                "status": "resolved",
-                "created_at": "2026-08-20T03:39:25.160792+00:00",
-                "multiplier_win": 1.8,
-                "multiplier_loss": 1.8,
-                "match_id": "NA1_5624841171",
-                "resolution": "loss",
-                "resolved_at": "2026-08-20T04:26:07.761196+00:00"
-            },
-            "bets": [
-                {
-                    "bet_id": "33fd7bab-4e91-4302-b43d-704c530c3aed",
-                    "market_id": "20946a0d-9a4d-4aaf-9949-bbb23df1d317",
-                    "user_id": "405837211263696918",
-                    "prediction": "win",
-                    "amount": 1000,
-                    "status": "lost",
-                    "payout": 0,
-                    "placed_at": "2026-08-20T03:47:01.669367+00:00",
-                    "resolved_at": "2026-08-20T04:26:07.761196+00:00"
-                }
-            ],
-            "reason": "loss",
-            "settled_at": "2026-08-20T04:26:07.761214+00:00"
-        },
-        {
-            "market": {
-                "market_id": "9e9b6c81-bd63-4a50-8a5d-c347cf28c9a0",
-                "type": "next_game_wl",
-                "status": "resolved",
-                "created_at": "2026-08-20T04:26:07.761236+00:00",
-                "multiplier_win": 1.8,
-                "multiplier_loss": 1.8,
-                "match_id": "NA1_5624867626",
+                "match_id": "NA1_5625350046",
                 "resolution": "win",
-                "resolved_at": "2026-08-20T05:04:20.058437+00:00"
+                "resolved_at": "2026-08-21T02:42:05.503521+00:00",
+                "dynamic_multiplier": 1.6601932811780948,
+                "total_pool": 3173
             },
             "bets": [
                 {
-                    "bet_id": "4e54dae1-efde-4095-80b4-fee9052b635e",
-                    "market_id": "9e9b6c81-bd63-4a50-8a5d-c347cf28c9a0",
-                    "user_id": "357281151171166208",
-                    "prediction": "win",
-                    "amount": 500,
-                    "status": "won",
-                    "payout": 900,
-                    "placed_at": "2026-08-20T04:57:30.425676+00:00",
-                    "resolved_at": "2026-08-20T05:04:20.058437+00:00"
-                }
-            ],
-            "reason": "win",
-            "settled_at": "2026-08-20T05:04:20.058461+00:00"
-        },
-        {
-            "market": {
-                "market_id": "c95277d9-8f87-454a-b33e-6b5c186cf0d2",
-                "type": "next_game_wl",
-                "status": "resolved",
-                "created_at": "2026-08-20T05:04:20.058480+00:00",
-                "multiplier_win": 1.8,
-                "multiplier_loss": 1.8,
-                "match_id": "NA1_5624896340",
-                "resolution": "loss",
-                "resolved_at": "2026-08-20T05:47:03.036195+00:00"
-            },
-            "bets": [
-                {
-                    "bet_id": "f418ef64-b184-4b57-9aa3-765053dc8ed0",
-                    "market_id": "c95277d9-8f87-454a-b33e-6b5c186cf0d2",
-                    "user_id": "357281151171166208",
-                    "prediction": "win",
-                    "amount": 500,
-                    "status": "lost",
-                    "payout": 0,
-                    "placed_at": "2026-08-20T05:10:18.498266+00:00",
-                    "resolved_at": "2026-08-20T05:47:03.036195+00:00"
-                }
-            ],
-            "reason": "loss",
-            "settled_at": "2026-08-20T05:47:03.036207+00:00"
-        },
-        {
-            "market": {
-                "market_id": "84c917b2-cae5-46cf-9144-1a374f7a06b1",
-                "type": "next_game_wl",
-                "status": "resolved",
-                "created_at": "2026-08-20T05:47:03.036226+00:00",
-                "multiplier_win": 1.8,
-                "multiplier_loss": 1.8,
-                "match_id": "NA1_5624926235",
-                "resolution": "win",
-                "resolved_at": "2026-08-20T06:24:04.799682+00:00"
-            },
-            "bets": [
-                {
-                    "bet_id": "26b60219-9d62-4bd8-92bb-3e53009ba884",
-                    "market_id": "84c917b2-cae5-46cf-9144-1a374f7a06b1",
+                    "bet_id": "e9fd35d4-c01c-4fea-bae8-f5aa461449d9",
+                    "market_id": "62f46c50-8f39-4f39-9aa6-fddda731911c",
                     "user_id": "748975890620350554",
                     "prediction": "loss",
-                    "amount": 500,
-                    "status": "lost",
-                    "payout": 0,
-                    "placed_at": "2026-08-20T05:49:00.888124+00:00",
-                    "resolved_at": "2026-08-20T06:24:04.799682+00:00"
-                },
-                {
-                    "bet_id": "ecb2f798-c6e5-4bb8-ac83-f0fd739e2564",
-                    "market_id": "84c917b2-cae5-46cf-9144-1a374f7a06b1",
-                    "user_id": "347202907818426370",
-                    "prediction": "win",
-                    "amount": 1000,
-                    "status": "won",
-                    "payout": 1800,
-                    "placed_at": "2026-08-20T05:49:37.257957+00:00",
-                    "resolved_at": "2026-08-20T06:24:04.799682+00:00"
-                },
-                {
-                    "bet_id": "45217568-449c-4dfd-ba8e-3c7f9c9d30f5",
-                    "market_id": "84c917b2-cae5-46cf-9144-1a374f7a06b1",
-                    "user_id": "525825288932818974",
-                    "prediction": "win",
-                    "amount": 1000,
-                    "status": "won",
-                    "payout": 1800,
-                    "placed_at": "2026-08-20T05:50:06.315547+00:00",
-                    "resolved_at": "2026-08-20T06:24:04.799682+00:00"
-                },
-                {
-                    "bet_id": "5cfb5f3a-e497-4b7b-8e09-fe8b40af0eac",
-                    "market_id": "84c917b2-cae5-46cf-9144-1a374f7a06b1",
-                    "user_id": "405837211263696918",
-                    "prediction": "win",
-                    "amount": 140,
-                    "status": "won",
-                    "payout": 252,
-                    "placed_at": "2026-08-20T05:50:23.408234+00:00",
-                    "resolved_at": "2026-08-20T06:24:04.799682+00:00"
-                },
-                {
-                    "bet_id": "e1f8bd0e-e2e3-449b-973e-3525c307691d",
-                    "market_id": "84c917b2-cae5-46cf-9144-1a374f7a06b1",
-                    "user_id": "405510807879811072",
-                    "prediction": "loss",
                     "amount": 1000,
                     "status": "lost",
                     "payout": 0,
-                    "placed_at": "2026-08-20T05:50:25.408726+00:00",
-                    "resolved_at": "2026-08-20T06:24:04.799682+00:00"
+                    "placed_at": "2026-08-21T02:16:37.375138+00:00",
+                    "resolved_at": "2026-08-21T02:42:05.503521+00:00",
+                    "multiplier": 0.0
                 },
                 {
-                    "bet_id": "41f01298-dce6-4db6-acff-dc080865d400",
-                    "market_id": "84c917b2-cae5-46cf-9144-1a374f7a06b1",
-                    "user_id": "249765806492221441",
+                    "bet_id": "04d42af9-fedc-428c-8101-d4edf187d0b2",
+                    "market_id": "62f46c50-8f39-4f39-9aa6-fddda731911c",
+                    "user_id": "395306767304622080",
                     "prediction": "win",
-                    "amount": 800,
+                    "amount": 1173,
                     "status": "won",
-                    "payout": 1440,
-                    "placed_at": "2026-08-20T06:00:54.815084+00:00",
-                    "resolved_at": "2026-08-20T06:24:04.799682+00:00"
+                    "payout": 1947,
+                    "placed_at": "2026-08-21T02:30:06.404456+00:00",
+                    "resolved_at": "2026-08-21T02:42:05.503521+00:00",
+                    "multiplier": 1.6601932811780948
                 },
                 {
-                    "bet_id": "d914b493-9486-489d-a65d-19c7739bd6ba",
-                    "market_id": "84c917b2-cae5-46cf-9144-1a374f7a06b1",
-                    "user_id": "357281151171166208",
-                    "prediction": "win",
-                    "amount": 500,
-                    "status": "won",
-                    "payout": 900,
-                    "placed_at": "2026-08-20T06:08:25.665486+00:00",
-                    "resolved_at": "2026-08-20T06:24:04.799682+00:00"
-                }
-            ],
-            "reason": "win",
-            "settled_at": "2026-08-20T06:24:04.799703+00:00"
-        },
-        {
-            "market": {
-                "market_id": "5885c62c-d73f-424c-bf37-160ddb1acffe",
-                "type": "next_game_wl",
-                "status": "resolved",
-                "created_at": "2026-08-20T06:24:04.799721+00:00",
-                "multiplier_win": 1.8,
-                "multiplier_loss": 1.8,
-                "match_id": "NA1_5624949052",
-                "resolution": "win",
-                "resolved_at": "2026-08-20T07:06:12.318585+00:00"
-            },
-            "bets": [
-                {
-                    "bet_id": "a7dda9db-c38c-426b-9062-02db9be35022",
-                    "market_id": "5885c62c-d73f-424c-bf37-160ddb1acffe",
-                    "user_id": "525825288932818974",
-                    "prediction": "win",
-                    "amount": 1000,
-                    "status": "won",
-                    "payout": 1800,
-                    "placed_at": "2026-08-20T06:25:29.561437+00:00",
-                    "resolved_at": "2026-08-20T07:06:12.318585+00:00"
-                },
-                {
-                    "bet_id": "9061f114-dbb6-4854-9e62-8a8adf757ba5",
-                    "market_id": "5885c62c-d73f-424c-bf37-160ddb1acffe",
-                    "user_id": "405837211263696918",
-                    "prediction": "win",
-                    "amount": 200,
-                    "status": "won",
-                    "payout": 360,
-                    "placed_at": "2026-08-20T06:27:48.427771+00:00",
-                    "resolved_at": "2026-08-20T07:06:12.318585+00:00"
-                },
-                {
-                    "bet_id": "6311dcd8-d333-4793-81b7-86d40b44683a",
-                    "market_id": "5885c62c-d73f-424c-bf37-160ddb1acffe",
-                    "user_id": "372224225471102976",
-                    "prediction": "loss",
-                    "amount": 1000,
-                    "status": "lost",
-                    "payout": 0,
-                    "placed_at": "2026-08-20T06:28:12.905787+00:00",
-                    "resolved_at": "2026-08-20T07:06:12.318585+00:00"
-                },
-                {
-                    "bet_id": "dbc2ffee-e0df-4cbc-b262-3ef1ad7b50fa",
-                    "market_id": "5885c62c-d73f-424c-bf37-160ddb1acffe",
-                    "user_id": "748975890620350554",
-                    "prediction": "loss",
-                    "amount": 450,
-                    "status": "lost",
-                    "payout": 0,
-                    "placed_at": "2026-08-20T06:29:12.042205+00:00",
-                    "resolved_at": "2026-08-20T07:06:12.318585+00:00"
-                },
-                {
-                    "bet_id": "ea8488af-80ed-4a95-aa8c-33449c16cd9a",
-                    "market_id": "5885c62c-d73f-424c-bf37-160ddb1acffe",
-                    "user_id": "347202907818426370",
-                    "prediction": "win",
-                    "amount": 500,
-                    "status": "won",
-                    "payout": 900,
-                    "placed_at": "2026-08-20T06:29:22.627085+00:00",
-                    "resolved_at": "2026-08-20T07:06:12.318585+00:00"
-                },
-                {
-                    "bet_id": "f6865fea-257d-4cdc-83fa-1058af6bbdec",
-                    "market_id": "5885c62c-d73f-424c-bf37-160ddb1acffe",
-                    "user_id": "249765806492221441",
-                    "prediction": "win",
-                    "amount": 500,
-                    "status": "won",
-                    "payout": 900,
-                    "placed_at": "2026-08-20T06:30:18.658735+00:00",
-                    "resolved_at": "2026-08-20T07:06:12.318585+00:00"
-                },
-                {
-                    "bet_id": "b2349220-cbac-4767-9907-3c4ef92cf02a",
-                    "market_id": "5885c62c-d73f-424c-bf37-160ddb1acffe",
-                    "user_id": "405510807879811072",
-                    "prediction": "loss",
-                    "amount": 1000,
-                    "status": "lost",
-                    "payout": 0,
-                    "placed_at": "2026-08-20T06:34:49.518321+00:00",
-                    "resolved_at": "2026-08-20T07:06:12.318585+00:00"
-                },
-                {
-                    "bet_id": "01bc37b4-2c09-4f0b-bf19-4680ce799937",
-                    "market_id": "5885c62c-d73f-424c-bf37-160ddb1acffe",
-                    "user_id": "298826888883732482",
-                    "prediction": "loss",
-                    "amount": 1000,
-                    "status": "lost",
-                    "payout": 0,
-                    "placed_at": "2026-08-20T06:37:06.190160+00:00",
-                    "resolved_at": "2026-08-20T07:06:12.318585+00:00"
-                },
-                {
-                    "bet_id": "f8ab3bf0-fbd8-4399-9e81-eae276dcba7b",
-                    "market_id": "5885c62c-d73f-424c-bf37-160ddb1acffe",
-                    "user_id": "357281151171166208",
-                    "prediction": "win",
-                    "amount": 500,
-                    "status": "won",
-                    "payout": 900,
-                    "placed_at": "2026-08-20T06:43:34.911279+00:00",
-                    "resolved_at": "2026-08-20T07:06:12.318585+00:00"
-                },
-                {
-                    "bet_id": "dd4059e3-0a29-4d18-9c99-9ca6f18be000",
-                    "market_id": "5885c62c-d73f-424c-bf37-160ddb1acffe",
-                    "user_id": "365942854809419786",
-                    "prediction": "loss",
-                    "amount": 100,
-                    "status": "lost",
-                    "payout": 0,
-                    "placed_at": "2026-08-20T06:46:17.407762+00:00",
-                    "resolved_at": "2026-08-20T07:06:12.318585+00:00"
-                },
-                {
-                    "bet_id": "e8fc61f2-ed88-44fc-8d5b-0f4819d2fc89",
-                    "market_id": "5885c62c-d73f-424c-bf37-160ddb1acffe",
-                    "user_id": "279415836484173825",
-                    "prediction": "win",
-                    "amount": 400,
-                    "status": "won",
-                    "payout": 720,
-                    "placed_at": "2026-08-20T06:47:58.229578+00:00",
-                    "resolved_at": "2026-08-20T07:06:12.318585+00:00"
-                },
-                {
-                    "bet_id": "2d969813-5e28-42f9-8fa1-6bc43a8c93b4",
-                    "market_id": "5885c62c-d73f-424c-bf37-160ddb1acffe",
-                    "user_id": "345435813619957762",
-                    "prediction": "loss",
-                    "amount": 1800,
-                    "status": "lost",
-                    "payout": 0,
-                    "placed_at": "2026-08-20T06:48:34.466858+00:00",
-                    "resolved_at": "2026-08-20T07:06:12.318585+00:00"
-                }
-            ],
-            "reason": "win",
-            "settled_at": "2026-08-20T07:06:12.318656+00:00"
-        },
-        {
-            "market": {
-                "market_id": "b1aaeeb7-a6b0-4c2f-a2d7-ada13703bd55",
-                "type": "next_game_wl",
-                "status": "resolved",
-                "created_at": "2026-08-20T07:06:12.318680+00:00",
-                "multiplier_win": 1.8,
-                "multiplier_loss": 1.8,
-                "match_id": "NA1_5624962321",
-                "resolution": "win",
-                "resolved_at": "2026-08-20T07:42:30.361647+00:00"
-            },
-            "bets": [
-                {
-                    "bet_id": "a11215fa-d4fc-4d27-bb5d-e0e78707da60",
-                    "market_id": "b1aaeeb7-a6b0-4c2f-a2d7-ada13703bd55",
-                    "user_id": "365942854809419786",
-                    "prediction": "win",
-                    "amount": 200,
-                    "status": "won",
-                    "payout": 360,
-                    "placed_at": "2026-08-20T07:06:53.036756+00:00",
-                    "resolved_at": "2026-08-20T07:42:30.361647+00:00"
-                },
-                {
-                    "bet_id": "2cf1da94-36bf-49bf-adf4-cd8696156238",
-                    "market_id": "b1aaeeb7-a6b0-4c2f-a2d7-ada13703bd55",
-                    "user_id": "525825288932818974",
-                    "prediction": "win",
-                    "amount": 1000,
-                    "status": "won",
-                    "payout": 1800,
-                    "placed_at": "2026-08-20T07:09:30.471310+00:00",
-                    "resolved_at": "2026-08-20T07:42:30.361647+00:00"
-                },
-                {
-                    "bet_id": "1d2c2630-3e1b-4f80-9219-2a01c1ee0aab",
-                    "market_id": "b1aaeeb7-a6b0-4c2f-a2d7-ada13703bd55",
-                    "user_id": "320643823287926785",
-                    "prediction": "loss",
-                    "amount": 1000,
-                    "status": "lost",
-                    "payout": 0,
-                    "placed_at": "2026-08-20T07:09:34.521541+00:00",
-                    "resolved_at": "2026-08-20T07:42:30.361647+00:00"
-                },
-                {
-                    "bet_id": "e905c0f3-0432-4d8d-b06f-a4fee19fef6f",
-                    "market_id": "b1aaeeb7-a6b0-4c2f-a2d7-ada13703bd55",
-                    "user_id": "357281151171166208",
-                    "prediction": "win",
-                    "amount": 500,
-                    "status": "won",
-                    "payout": 900,
-                    "placed_at": "2026-08-20T07:11:04.677857+00:00",
-                    "resolved_at": "2026-08-20T07:42:30.361647+00:00"
-                },
-                {
-                    "bet_id": "de509d40-5cdf-46ba-a4fd-dc0358ef9b35",
-                    "market_id": "b1aaeeb7-a6b0-4c2f-a2d7-ada13703bd55",
-                    "user_id": "405837211263696918",
-                    "prediction": "win",
-                    "amount": 300,
-                    "status": "won",
-                    "payout": 540,
-                    "placed_at": "2026-08-20T07:11:45.645433+00:00",
-                    "resolved_at": "2026-08-20T07:42:30.361647+00:00"
-                },
-                {
-                    "bet_id": "47a12513-c7d7-4781-b8e0-013c4231066c",
-                    "market_id": "b1aaeeb7-a6b0-4c2f-a2d7-ada13703bd55",
-                    "user_id": "333071784679309313",
-                    "prediction": "win",
-                    "amount": 200,
-                    "status": "won",
-                    "payout": 360,
-                    "placed_at": "2026-08-20T07:13:29.210641+00:00",
-                    "resolved_at": "2026-08-20T07:42:30.361647+00:00"
-                },
-                {
-                    "bet_id": "81b6a873-999f-477b-b266-332287f0dd11",
-                    "market_id": "b1aaeeb7-a6b0-4c2f-a2d7-ada13703bd55",
-                    "user_id": "748975890620350554",
-                    "prediction": "win",
-                    "amount": 50,
-                    "status": "won",
-                    "payout": 90,
-                    "placed_at": "2026-08-20T07:13:53.121912+00:00",
-                    "resolved_at": "2026-08-20T07:42:30.361647+00:00"
-                },
-                {
-                    "bet_id": "24ac1211-9474-420e-85c4-3886dabe8d18",
-                    "market_id": "b1aaeeb7-a6b0-4c2f-a2d7-ada13703bd55",
-                    "user_id": "372224225471102976",
-                    "prediction": "win",
-                    "amount": 1000,
-                    "status": "won",
-                    "payout": 1800,
-                    "placed_at": "2026-08-20T07:14:56.204446+00:00",
-                    "resolved_at": "2026-08-20T07:42:30.361647+00:00"
-                },
-                {
-                    "bet_id": "6957d276-325d-46b7-8126-80959d4334ce",
-                    "market_id": "b1aaeeb7-a6b0-4c2f-a2d7-ada13703bd55",
-                    "user_id": "249765806492221441",
-                    "prediction": "win",
-                    "amount": 2840,
-                    "status": "won",
-                    "payout": 5112,
-                    "placed_at": "2026-08-20T07:33:10.056457+00:00",
-                    "resolved_at": "2026-08-20T07:42:30.361647+00:00"
-                }
-            ],
-            "reason": "win",
-            "settled_at": "2026-08-20T07:42:30.361736+00:00"
-        },
-        {
-            "market": {
-                "market_id": "dfdce847-795e-46ce-90aa-636d5fdc6775",
-                "type": "next_game_wl",
-                "status": "resolved",
-                "created_at": "2026-08-20T07:42:30.362992+00:00",
-                "multiplier_win": 1.8,
-                "multiplier_loss": 1.8,
-                "match_id": "NA1_5624973158",
-                "resolution": "win",
-                "resolved_at": "2026-08-20T08:13:49.074630+00:00"
-            },
-            "bets": [
-                {
-                    "bet_id": "913a951e-4efe-4a79-98a6-7c59b698528a",
-                    "market_id": "dfdce847-795e-46ce-90aa-636d5fdc6775",
-                    "user_id": "365942854809419786",
-                    "prediction": "win",
-                    "amount": 300,
-                    "status": "won",
-                    "payout": 540,
-                    "placed_at": "2026-08-20T07:44:01.095502+00:00",
-                    "resolved_at": "2026-08-20T08:13:49.074630+00:00"
-                },
-                {
-                    "bet_id": "928270d5-6d15-475e-a173-0f474b1f33f1",
-                    "market_id": "dfdce847-795e-46ce-90aa-636d5fdc6775",
-                    "user_id": "357281151171166208",
-                    "prediction": "win",
-                    "amount": 500,
-                    "status": "won",
-                    "payout": 900,
-                    "placed_at": "2026-08-20T07:44:18.514880+00:00",
-                    "resolved_at": "2026-08-20T08:13:49.074630+00:00"
-                },
-                {
-                    "bet_id": "107eb273-12d7-441e-b091-f8772b6111ec",
-                    "market_id": "dfdce847-795e-46ce-90aa-636d5fdc6775",
-                    "user_id": "525825288932818974",
-                    "prediction": "win",
-                    "amount": 1000,
-                    "status": "won",
-                    "payout": 1800,
-                    "placed_at": "2026-08-20T07:44:34.523970+00:00",
-                    "resolved_at": "2026-08-20T08:13:49.074630+00:00"
-                },
-                {
-                    "bet_id": "1ce1675c-0e77-4662-b1d5-d025eb3b6117",
-                    "market_id": "dfdce847-795e-46ce-90aa-636d5fdc6775",
-                    "user_id": "405837211263696918",
-                    "prediction": "win",
-                    "amount": 500,
-                    "status": "won",
-                    "payout": 900,
-                    "placed_at": "2026-08-20T07:44:49.014872+00:00",
-                    "resolved_at": "2026-08-20T08:13:49.074630+00:00"
-                },
-                {
-                    "bet_id": "0f5bcfb8-5229-4a91-ac0e-b08beb1172b7",
-                    "market_id": "dfdce847-795e-46ce-90aa-636d5fdc6775",
-                    "user_id": "748975890620350554",
-                    "prediction": "win",
-                    "amount": 90,
-                    "status": "won",
-                    "payout": 162,
-                    "placed_at": "2026-08-20T07:46:38.019434+00:00",
-                    "resolved_at": "2026-08-20T08:13:49.074630+00:00"
-                },
-                {
-                    "bet_id": "e80bbae2-2a00-4b35-b58a-de08324e02e6",
-                    "market_id": "dfdce847-795e-46ce-90aa-636d5fdc6775",
-                    "user_id": "249765806492221441",
-                    "prediction": "win",
-                    "amount": 1000,
-                    "status": "won",
-                    "payout": 1800,
-                    "placed_at": "2026-08-20T07:53:22.763071+00:00",
-                    "resolved_at": "2026-08-20T08:13:49.074630+00:00"
-                },
-                {
-                    "bet_id": "ed15bec8-d953-4d94-b53f-f4681f6efee1",
-                    "market_id": "dfdce847-795e-46ce-90aa-636d5fdc6775",
+                    "bet_id": "2adf4d12-15fd-4e6d-86c4-2e3719298010",
+                    "market_id": "62f46c50-8f39-4f39-9aa6-fddda731911c",
                     "user_id": "1117658843602767954",
                     "prediction": "win",
-                    "amount": 500,
+                    "amount": 1000,
                     "status": "won",
-                    "payout": 900,
-                    "placed_at": "2026-08-20T08:05:36.864001+00:00",
-                    "resolved_at": "2026-08-20T08:13:49.074630+00:00"
+                    "payout": 1660,
+                    "placed_at": "2026-08-21T02:30:14.522802+00:00",
+                    "resolved_at": "2026-08-21T02:42:05.503521+00:00",
+                    "multiplier": 1.6601932811780948
                 }
             ],
             "reason": "win",
-            "settled_at": "2026-08-20T08:13:49.074655+00:00"
+            "settled_at": "2026-08-21T02:42:05.503540+00:00"
         },
         {
             "market": {
-                "market_id": "fafae119-4b3f-4632-9ceb-de35f54eb2e8",
+                "market_id": "59d82959-cdc9-470b-9230-00e151e623b2",
                 "type": "next_game_wl",
-                "status": "resolved",
-                "created_at": "2026-08-20T08:13:49.074675+00:00",
+                "status": "cancelled",
+                "created_at": "2026-08-21T02:42:05.503557+00:00",
                 "multiplier_win": 1.8,
                 "multiplier_loss": 1.8,
-                "match_id": "NA1_5625075129",
-                "resolution": "win",
-                "resolved_at": "2026-08-20T18:26:54.955799+00:00"
-            },
-            "bets": [],
-            "reason": "win",
-            "settled_at": "2026-08-20T18:26:54.955813+00:00"
-        },
-        {
-            "market": {
-                "market_id": "94de539b-0c6d-4dfd-b039-57ed47bc8a63",
-                "type": "next_game_wl",
-                "status": "resolved",
-                "created_at": "2026-08-20T18:26:54.955839+00:00",
-                "multiplier_win": 1.8,
-                "multiplier_loss": 1.8,
-                "match_id": "NA1_5625093103",
-                "resolution": "loss",
-                "resolved_at": "2026-08-20T19:08:59.011419+00:00"
+                "match_id": "NA1_5625376770",
+                "resolution": "remake",
+                "resolved_at": "2026-08-21T03:10:59.526169+00:00"
             },
             "bets": [
                 {
-                    "bet_id": "08df089a-291d-494e-a298-5b65906c0acf",
-                    "market_id": "94de539b-0c6d-4dfd-b039-57ed47bc8a63",
-                    "user_id": "347202907818426370",
+                    "bet_id": "6d480b01-cbf9-466e-a3a1-5edab9147f3d",
+                    "market_id": "59d82959-cdc9-470b-9230-00e151e623b2",
+                    "user_id": "357281151171166208",
                     "prediction": "loss",
-                    "amount": 600,
-                    "status": "won",
-                    "payout": 1080,
-                    "placed_at": "2026-08-20T18:28:51.159465+00:00",
-                    "resolved_at": "2026-08-20T19:08:59.011419+00:00"
-                },
-                {
-                    "bet_id": "0a9301a1-d3ec-475c-b1aa-b8181b3fc7c4",
-                    "market_id": "94de539b-0c6d-4dfd-b039-57ed47bc8a63",
-                    "user_id": "365942854809419786",
-                    "prediction": "loss",
-                    "amount": 100,
-                    "status": "won",
-                    "payout": 180,
-                    "placed_at": "2026-08-20T19:03:14.176540+00:00",
-                    "resolved_at": "2026-08-20T19:08:59.011419+00:00"
+                    "amount": 800,
+                    "status": "refunded",
+                    "payout": 800,
+                    "placed_at": "2026-08-21T02:47:03.315575+00:00",
+                    "resolved_at": "2026-08-21T03:10:59.526169+00:00"
                 }
             ],
-            "reason": "loss",
-            "settled_at": "2026-08-20T19:08:59.011445+00:00"
+            "reason": "remake",
+            "settled_at": "2026-08-21T03:10:59.526184+00:00"
         },
         {
             "market": {
-                "market_id": "a52b5cbc-2d8e-44f6-9f94-bd946aa75a87",
+                "market_id": "1403de7d-0ba4-4616-9439-f1e1a870d198",
                 "type": "next_game_wl",
                 "status": "resolved",
-                "created_at": "2026-08-20T19:08:59.011488+00:00",
+                "created_at": "2026-08-21T03:10:59.526202+00:00",
                 "multiplier_win": 1.8,
                 "multiplier_loss": 1.8,
-                "match_id": "NA1_5625112967",
+                "match_id": "NA1_5625388458",
                 "resolution": "win",
-                "resolved_at": "2026-08-20T19:48:24.838679+00:00"
+                "resolved_at": "2026-08-21T03:42:20.589930+00:00",
+                "dynamic_multiplier": 1.2,
+                "total_pool": 3148
             },
             "bets": [
                 {
-                    "bet_id": "d170214c-d7a7-444e-982e-668e825d916b",
-                    "market_id": "a52b5cbc-2d8e-44f6-9f94-bd946aa75a87",
-                    "user_id": "365942854809419786",
-                    "prediction": "win",
-                    "amount": 300,
-                    "status": "won",
-                    "payout": 540,
-                    "placed_at": "2026-08-20T19:13:44.537660+00:00",
-                    "resolved_at": "2026-08-20T19:48:24.838679+00:00"
-                },
-                {
-                    "bet_id": "dc76303d-88f4-4ffc-8099-c96aeb88ced5",
-                    "market_id": "a52b5cbc-2d8e-44f6-9f94-bd946aa75a87",
-                    "user_id": "405837211263696918",
-                    "prediction": "loss",
-                    "amount": 300,
-                    "status": "lost",
-                    "payout": 0,
-                    "placed_at": "2026-08-20T19:14:38.099647+00:00",
-                    "resolved_at": "2026-08-20T19:48:24.838679+00:00"
-                },
-                {
-                    "bet_id": "1d92aa81-3d30-46da-88e0-fb010e876a0e",
-                    "market_id": "a52b5cbc-2d8e-44f6-9f94-bd946aa75a87",
+                    "bet_id": "b120895f-5804-48b2-b99d-e5abf2252a17",
+                    "market_id": "1403de7d-0ba4-4616-9439-f1e1a870d198",
                     "user_id": "525825288932818974",
+                    "prediction": "win",
+                    "amount": 1,
+                    "status": "won",
+                    "payout": 1,
+                    "placed_at": "2026-08-21T03:13:01.183533+00:00",
+                    "resolved_at": "2026-08-21T03:42:20.589930+00:00",
+                    "multiplier": 1.2
+                },
+                {
+                    "bet_id": "dc08c3f0-c20a-4b0f-a2c4-3dd60493e0e7",
+                    "market_id": "1403de7d-0ba4-4616-9439-f1e1a870d198",
+                    "user_id": "748975890620350554",
                     "prediction": "win",
                     "amount": 1000,
                     "status": "won",
-                    "payout": 1800,
-                    "placed_at": "2026-08-20T19:14:45.867026+00:00",
-                    "resolved_at": "2026-08-20T19:48:24.838679+00:00"
+                    "payout": 1200,
+                    "placed_at": "2026-08-21T03:20:33.279615+00:00",
+                    "resolved_at": "2026-08-21T03:42:20.589930+00:00",
+                    "multiplier": 1.2
                 },
                 {
-                    "bet_id": "969e4095-d8f0-428e-a322-84524418820c",
-                    "market_id": "a52b5cbc-2d8e-44f6-9f94-bd946aa75a87",
-                    "user_id": "347202907818426370",
+                    "bet_id": "4a8c3085-97e9-4ab5-b1b9-52db34da4c0d",
+                    "market_id": "1403de7d-0ba4-4616-9439-f1e1a870d198",
+                    "user_id": "395306767304622080",
                     "prediction": "win",
-                    "amount": 300,
+                    "amount": 2147,
                     "status": "won",
-                    "payout": 540,
-                    "placed_at": "2026-08-20T19:14:59.892673+00:00",
-                    "resolved_at": "2026-08-20T19:48:24.838679+00:00"
-                },
-                {
-                    "bet_id": "44f5bf2d-6d89-4dc0-bd1c-1d1fc0df6fd6",
-                    "market_id": "a52b5cbc-2d8e-44f6-9f94-bd946aa75a87",
-                    "user_id": "333071784679309313",
-                    "prediction": "win",
-                    "amount": 200,
-                    "status": "won",
-                    "payout": 360,
-                    "placed_at": "2026-08-20T19:16:17.340227+00:00",
-                    "resolved_at": "2026-08-20T19:48:24.838679+00:00"
+                    "payout": 2576,
+                    "placed_at": "2026-08-21T03:28:09.303853+00:00",
+                    "resolved_at": "2026-08-21T03:42:20.589930+00:00",
+                    "multiplier": 1.2
                 }
             ],
             "reason": "win",
-            "settled_at": "2026-08-20T19:48:24.838707+00:00"
+            "settled_at": "2026-08-21T03:42:20.589971+00:00"
         },
         {
             "market": {
-                "market_id": "c0781ea6-f24a-4e5c-940d-ff0301063990",
+                "market_id": "330345fa-f16c-4d80-9ebf-6315c8b8e016",
                 "type": "next_game_wl",
                 "status": "cancelled",
-                "created_at": "2026-08-20T19:48:24.838861+00:00",
+                "created_at": "2026-08-21T03:42:20.589994+00:00",
                 "multiplier_win": 1.8,
                 "multiplier_loss": 1.8,
-                "match_id": "NA1_5625122076",
+                "match_id": "NA1_5625426093",
                 "resolution": "remake",
-                "resolved_at": "2026-08-20T20:26:36.523093+00:00"
+                "resolved_at": "2026-08-21T03:51:37.252681+00:00"
             },
             "bets": [
                 {
-                    "bet_id": "dce83983-5509-4c7c-9e82-6f9c1e43edb5",
-                    "market_id": "c0781ea6-f24a-4e5c-940d-ff0301063990",
+                    "bet_id": "91209ad2-059b-4628-b11e-7c1761d0ae29",
+                    "market_id": "330345fa-f16c-4d80-9ebf-6315c8b8e016",
                     "user_id": "525825288932818974",
                     "prediction": "win",
                     "amount": 1000,
                     "status": "refunded",
                     "payout": 1000,
-                    "placed_at": "2026-08-20T19:52:58.011693+00:00",
-                    "resolved_at": "2026-08-20T20:26:36.523093+00:00"
+                    "placed_at": "2026-08-21T03:43:27.711284+00:00",
+                    "resolved_at": "2026-08-21T03:51:37.252681+00:00"
                 },
                 {
-                    "bet_id": "bc889847-2871-4d26-87ac-1df533a3490a",
-                    "market_id": "c0781ea6-f24a-4e5c-940d-ff0301063990",
-                    "user_id": "333071784679309313",
+                    "bet_id": "967e3523-f7f1-42ee-a646-b4dc900834fa",
+                    "market_id": "330345fa-f16c-4d80-9ebf-6315c8b8e016",
+                    "user_id": "365942854809419786",
+                    "prediction": "win",
+                    "amount": 250,
+                    "status": "refunded",
+                    "payout": 250,
+                    "placed_at": "2026-08-21T03:43:49.244529+00:00",
+                    "resolved_at": "2026-08-21T03:51:37.252681+00:00"
+                }
+            ],
+            "reason": "remake",
+            "settled_at": "2026-08-21T03:51:37.252697+00:00"
+        },
+        {
+            "market": {
+                "market_id": "48f29d79-23e8-4de0-b4d7-49b24e8f5963",
+                "type": "next_game_wl",
+                "status": "resolved",
+                "created_at": "2026-08-21T03:51:37.252717+00:00",
+                "multiplier_win": 1.8,
+                "multiplier_loss": 1.8,
+                "match_id": "NA1_5625423484",
+                "resolution": "win",
+                "resolved_at": "2026-08-21T04:21:42.775303+00:00",
+                "dynamic_multiplier": 1.2,
+                "total_pool": 1200
+            },
+            "bets": [
+                {
+                    "bet_id": "5edcfa81-508b-4fc7-9c78-67a0a10dbd59",
+                    "market_id": "48f29d79-23e8-4de0-b4d7-49b24e8f5963",
+                    "user_id": "525825288932818974",
+                    "prediction": "win",
+                    "amount": 1000,
+                    "status": "won",
+                    "payout": 1200,
+                    "placed_at": "2026-08-21T03:54:41.326474+00:00",
+                    "resolved_at": "2026-08-21T04:21:42.775303+00:00",
+                    "multiplier": 1.2
+                },
+                {
+                    "bet_id": "d18102b8-e11c-47cd-a65d-306148791e17",
+                    "market_id": "48f29d79-23e8-4de0-b4d7-49b24e8f5963",
+                    "user_id": "365942854809419786",
+                    "prediction": "win",
+                    "amount": 200,
+                    "status": "won",
+                    "payout": 240,
+                    "placed_at": "2026-08-21T03:57:52.921514+00:00",
+                    "resolved_at": "2026-08-21T04:21:42.775303+00:00",
+                    "multiplier": 1.2
+                }
+            ],
+            "reason": "win",
+            "settled_at": "2026-08-21T04:21:42.775323+00:00"
+        },
+        {
+            "market": {
+                "market_id": "e4799b31-0a4c-49c7-a627-ba81af0db84f",
+                "type": "next_game_wl",
+                "status": "resolved",
+                "created_at": "2026-08-21T04:21:42.775340+00:00",
+                "multiplier_win": 1.8,
+                "multiplier_loss": 1.8,
+                "match_id": "NA1_5625452065",
+                "resolution": "win",
+                "resolved_at": "2026-08-21T05:00:54.972710+00:00",
+                "dynamic_multiplier": 2.7,
+                "total_pool": 1000
+            },
+            "bets": [
+                {
+                    "bet_id": "d9af1112-e029-477c-9cf8-1a8b626a77ce",
+                    "market_id": "e4799b31-0a4c-49c7-a627-ba81af0db84f",
+                    "user_id": "365942854809419786",
+                    "prediction": "win",
+                    "amount": 400,
+                    "status": "won",
+                    "payout": 1080,
+                    "placed_at": "2026-08-21T04:27:09.390342+00:00",
+                    "resolved_at": "2026-08-21T05:00:54.972710+00:00",
+                    "multiplier": 2.7
+                },
+                {
+                    "bet_id": "3e401db6-6a3a-449d-ad0a-3c8e65afaca9",
+                    "market_id": "e4799b31-0a4c-49c7-a627-ba81af0db84f",
+                    "user_id": "347202907818426370",
+                    "prediction": "loss",
+                    "amount": 600,
+                    "status": "lost",
+                    "payout": 0,
+                    "placed_at": "2026-08-21T04:29:42.805448+00:00",
+                    "resolved_at": "2026-08-21T05:00:54.972710+00:00",
+                    "multiplier": 0.0
+                }
+            ],
+            "reason": "win",
+            "settled_at": "2026-08-21T05:00:54.972730+00:00"
+        },
+        {
+            "market": {
+                "market_id": "95d26a95-a194-441d-9c01-44f257f2f86b",
+                "type": "next_game_wl",
+                "status": "resolved",
+                "created_at": "2026-08-21T05:00:54.972753+00:00",
+                "multiplier_win": 1.8,
+                "multiplier_loss": 1.8,
+                "match_id": "NA1_5625478041",
+                "resolution": "loss",
+                "resolved_at": "2026-08-21T05:35:36.406374+00:00",
+                "dynamic_multiplier": 1.6527162977867202,
+                "total_pool": 5776
+            },
+            "bets": [
+                {
+                    "bet_id": "dd9af80e-c89f-44c8-88da-046b75163d3f",
+                    "market_id": "95d26a95-a194-441d-9c01-44f257f2f86b",
+                    "user_id": "326498285978124289",
+                    "prediction": "win",
+                    "amount": 500,
+                    "status": "lost",
+                    "payout": 0,
+                    "placed_at": "2026-08-21T05:01:23.212457+00:00",
+                    "resolved_at": "2026-08-21T05:35:36.406374+00:00",
+                    "multiplier": 0.0
+                },
+                {
+                    "bet_id": "7333c582-2a93-4272-a405-a0ac87f20049",
+                    "market_id": "95d26a95-a194-441d-9c01-44f257f2f86b",
+                    "user_id": "365942854809419786",
+                    "prediction": "win",
+                    "amount": 300,
+                    "status": "lost",
+                    "payout": 0,
+                    "placed_at": "2026-08-21T05:02:28.173260+00:00",
+                    "resolved_at": "2026-08-21T05:35:36.406374+00:00",
+                    "multiplier": 0.0
+                },
+                {
+                    "bet_id": "1d3acedf-44cd-4ddb-88f9-5db485c278df",
+                    "market_id": "95d26a95-a194-441d-9c01-44f257f2f86b",
+                    "user_id": "525825288932818974",
+                    "prediction": "win",
+                    "amount": 1000,
+                    "status": "lost",
+                    "payout": 0,
+                    "placed_at": "2026-08-21T05:02:39.714848+00:00",
+                    "resolved_at": "2026-08-21T05:35:36.406374+00:00",
+                    "multiplier": 0.0
+                },
+                {
+                    "bet_id": "257dc608-595e-4f71-9f76-8d086d66a777",
+                    "market_id": "95d26a95-a194-441d-9c01-44f257f2f86b",
+                    "user_id": "274023011688906753",
+                    "prediction": "loss",
+                    "amount": 700,
+                    "status": "won",
+                    "payout": 1156,
+                    "placed_at": "2026-08-21T05:02:57.818552+00:00",
+                    "resolved_at": "2026-08-21T05:35:36.406374+00:00",
+                    "multiplier": 1.6527162977867202
+                },
+                {
+                    "bet_id": "e63d8ec7-d400-40fc-a29c-54132f899283",
+                    "market_id": "95d26a95-a194-441d-9c01-44f257f2f86b",
+                    "user_id": "748975890620350554",
+                    "prediction": "loss",
+                    "amount": 500,
+                    "status": "won",
+                    "payout": 826,
+                    "placed_at": "2026-08-21T05:10:14.315733+00:00",
+                    "resolved_at": "2026-08-21T05:35:36.406374+00:00",
+                    "multiplier": 1.6527162977867202
+                },
+                {
+                    "bet_id": "9ba182f5-6742-425a-b245-e5e01d9e5f93",
+                    "market_id": "95d26a95-a194-441d-9c01-44f257f2f86b",
+                    "user_id": "395306767304622080",
+                    "prediction": "loss",
+                    "amount": 2776,
+                    "status": "won",
+                    "payout": 4587,
+                    "placed_at": "2026-08-21T05:31:08.363632+00:00",
+                    "resolved_at": "2026-08-21T05:35:36.406374+00:00",
+                    "multiplier": 1.6527162977867202
+                }
+            ],
+            "reason": "loss",
+            "settled_at": "2026-08-21T05:35:36.406402+00:00"
+        },
+        {
+            "market": {
+                "market_id": "a62f42bc-bd7d-46c8-967f-b024c770ccaf",
+                "type": "next_game_wl",
+                "status": "resolved",
+                "created_at": "2026-08-21T05:35:36.406424+00:00",
+                "multiplier_win": 1.8,
+                "multiplier_loss": 1.8,
+                "match_id": "NA1_5625501267",
+                "resolution": "win",
+                "resolved_at": "2026-08-21T06:07:16.734913+00:00",
+                "dynamic_multiplier": 1.3428571428571427,
+                "total_pool": 4000
+            },
+            "bets": [
+                {
+                    "bet_id": "db5e5238-add7-4823-b029-335f5ffa3cec",
+                    "market_id": "a62f42bc-bd7d-46c8-967f-b024c770ccaf",
+                    "user_id": "395306767304622080",
+                    "prediction": "win",
+                    "amount": 2000,
+                    "status": "won",
+                    "payout": 2685,
+                    "placed_at": "2026-08-21T05:37:09.019441+00:00",
+                    "resolved_at": "2026-08-21T06:07:16.734913+00:00",
+                    "multiplier": 1.3428571428571427
+                },
+                {
+                    "bet_id": "2117fac9-e101-47d7-9a1d-0657b22bf084",
+                    "market_id": "a62f42bc-bd7d-46c8-967f-b024c770ccaf",
+                    "user_id": "274023011688906753",
+                    "prediction": "loss",
+                    "amount": 500,
+                    "status": "lost",
+                    "payout": 0,
+                    "placed_at": "2026-08-21T05:52:17.593600+00:00",
+                    "resolved_at": "2026-08-21T06:07:16.734913+00:00",
+                    "multiplier": 0.0
+                },
+                {
+                    "bet_id": "332e81d5-cf0b-4acf-b9b0-4e8c0b59a83c",
+                    "market_id": "a62f42bc-bd7d-46c8-967f-b024c770ccaf",
+                    "user_id": "372224225471102976",
+                    "prediction": "win",
+                    "amount": 1000,
+                    "status": "won",
+                    "payout": 1342,
+                    "placed_at": "2026-08-21T05:52:49.788324+00:00",
+                    "resolved_at": "2026-08-21T06:07:16.734913+00:00",
+                    "multiplier": 1.3428571428571427
+                },
+                {
+                    "bet_id": "4663e8b7-ed87-419e-8340-d09dffe8dc5a",
+                    "market_id": "a62f42bc-bd7d-46c8-967f-b024c770ccaf",
+                    "user_id": "326498285978124289",
+                    "prediction": "win",
+                    "amount": 500,
+                    "status": "won",
+                    "payout": 671,
+                    "placed_at": "2026-08-21T06:03:38.609501+00:00",
+                    "resolved_at": "2026-08-21T06:07:16.734913+00:00",
+                    "multiplier": 1.3428571428571427
+                }
+            ],
+            "reason": "win",
+            "settled_at": "2026-08-21T06:07:16.735012+00:00"
+        },
+        {
+            "market": {
+                "market_id": "7fe0e8cc-fd37-4e27-9fd8-ccd6fe552d40",
+                "type": "next_game_wl",
+                "status": "cancelled",
+                "created_at": "2026-08-21T06:07:16.735041+00:00",
+                "multiplier_win": 1.8,
+                "multiplier_loss": 1.8,
+                "match_id": "NA1_5625658130",
+                "resolution": "remake",
+                "resolved_at": "2026-08-21T17:27:18.037730+00:00"
+            },
+            "bets": [
+                {
+                    "bet_id": "a989e8c4-d852-4d1c-9f76-0babebd3e18e",
+                    "market_id": "7fe0e8cc-fd37-4e27-9fd8-ccd6fe552d40",
+                    "user_id": "274023011688906753",
                     "prediction": "loss",
                     "amount": 500,
                     "status": "refunded",
                     "payout": 500,
-                    "placed_at": "2026-08-20T19:53:02.094096+00:00",
-                    "resolved_at": "2026-08-20T20:26:36.523093+00:00"
+                    "placed_at": "2026-08-21T06:08:37.732483+00:00",
+                    "resolved_at": "2026-08-21T17:27:18.037730+00:00"
                 },
                 {
-                    "bet_id": "3b60764c-a3a2-490d-83c5-2b5a57c3ed29",
-                    "market_id": "c0781ea6-f24a-4e5c-940d-ff0301063990",
-                    "user_id": "365942854809419786",
+                    "bet_id": "0e8fd245-c8d0-40ab-ab0d-5ae5253f7571",
+                    "market_id": "7fe0e8cc-fd37-4e27-9fd8-ccd6fe552d40",
+                    "user_id": "326498285978124289",
                     "prediction": "loss",
-                    "amount": 200,
+                    "amount": 500,
                     "status": "refunded",
-                    "payout": 200,
-                    "placed_at": "2026-08-20T19:55:59.895896+00:00",
-                    "resolved_at": "2026-08-20T20:26:36.523093+00:00"
-                },
-                {
-                    "bet_id": "e716b6fc-bc13-45f9-8a86-6b10d8363884",
-                    "market_id": "c0781ea6-f24a-4e5c-940d-ff0301063990",
-                    "user_id": "298826888883732482",
-                    "prediction": "loss",
-                    "amount": 1000,
-                    "status": "refunded",
-                    "payout": 1000,
-                    "placed_at": "2026-08-20T20:19:07.311192+00:00",
-                    "resolved_at": "2026-08-20T20:26:36.523093+00:00"
-                },
-                {
-                    "bet_id": "ba676314-5720-46b7-a51f-28d2acae5ac7",
-                    "market_id": "c0781ea6-f24a-4e5c-940d-ff0301063990",
-                    "user_id": "347202907818426370",
-                    "prediction": "loss",
-                    "amount": 1500,
-                    "status": "refunded",
-                    "payout": 1500,
-                    "placed_at": "2026-08-20T20:20:32.317164+00:00",
-                    "resolved_at": "2026-08-20T20:26:36.523093+00:00"
-                },
-                {
-                    "bet_id": "73c54e13-6b2a-4281-a0aa-f796a7c7e130",
-                    "market_id": "c0781ea6-f24a-4e5c-940d-ff0301063990",
-                    "user_id": "279415836484173825",
-                    "prediction": "loss",
-                    "amount": 1320,
-                    "status": "refunded",
-                    "payout": 1320,
-                    "placed_at": "2026-08-20T20:26:33.316255+00:00",
-                    "resolved_at": "2026-08-20T20:26:36.523093+00:00"
+                    "payout": 500,
+                    "placed_at": "2026-08-21T06:09:28.279905+00:00",
+                    "resolved_at": "2026-08-21T17:27:18.037730+00:00"
                 }
             ],
             "reason": "remake",
-            "settled_at": "2026-08-20T20:26:36.523116+00:00"
+            "settled_at": "2026-08-21T17:27:18.037747+00:00"
+        },
+        {
+            "market": {
+                "market_id": "62a13884-ccd0-4dae-bd10-fcb1a49a269a",
+                "type": "next_game_wl",
+                "status": "resolved",
+                "created_at": "2026-08-21T17:27:18.037769+00:00",
+                "multiplier_win": 1.8,
+                "multiplier_loss": 1.8,
+                "match_id": "NA1_5625671980",
+                "resolution": "win",
+                "resolved_at": "2026-08-21T17:58:46.400039+00:00",
+                "dynamic_multiplier": 3.1960079840319358,
+                "total_pool": 1501
+            },
+            "bets": [
+                {
+                    "bet_id": "832f0376-be94-49c5-bc2c-717a2dddb1e5",
+                    "market_id": "62a13884-ccd0-4dae-bd10-fcb1a49a269a",
+                    "user_id": "405510807879811072",
+                    "prediction": "loss",
+                    "amount": 1000,
+                    "status": "lost",
+                    "payout": 0,
+                    "placed_at": "2026-08-21T17:39:39.404768+00:00",
+                    "resolved_at": "2026-08-21T17:58:46.400039+00:00",
+                    "multiplier": 0.0
+                },
+                {
+                    "bet_id": "b304b6d8-90f4-469f-b04f-3fa4a056cbbd",
+                    "market_id": "62a13884-ccd0-4dae-bd10-fcb1a49a269a",
+                    "user_id": "405837211263696918",
+                    "prediction": "win",
+                    "amount": 1,
+                    "status": "won",
+                    "payout": 3,
+                    "placed_at": "2026-08-21T17:39:54.809751+00:00",
+                    "resolved_at": "2026-08-21T17:58:46.400039+00:00",
+                    "multiplier": 3.1960079840319358
+                },
+                {
+                    "bet_id": "0591106b-6284-484c-9bc9-abe11aecddaf",
+                    "market_id": "62a13884-ccd0-4dae-bd10-fcb1a49a269a",
+                    "user_id": "357281151171166208",
+                    "prediction": "win",
+                    "amount": 500,
+                    "status": "won",
+                    "payout": 1598,
+                    "placed_at": "2026-08-21T17:42:30.183165+00:00",
+                    "resolved_at": "2026-08-21T17:58:46.400039+00:00",
+                    "multiplier": 3.1960079840319358
+                }
+            ],
+            "reason": "win",
+            "settled_at": "2026-08-21T17:58:46.400062+00:00"
+        },
+        {
+            "market": {
+                "market_id": "bd223ab4-4c79-4b16-8d61-eec44616acc5",
+                "type": "next_game_wl",
+                "status": "resolved",
+                "created_at": "2026-08-21T17:58:46.400084+00:00",
+                "multiplier_win": 1.8,
+                "multiplier_loss": 1.8,
+                "match_id": "NA1_5625681089",
+                "resolution": "win",
+                "resolved_at": "2026-08-21T18:40:42.686245+00:00",
+                "dynamic_multiplier": 1.4142857142857141,
+                "total_pool": 1700
+            },
+            "bets": [
+                {
+                    "bet_id": "171c40c0-450d-43af-8a9b-39ff71d6817f",
+                    "market_id": "bd223ab4-4c79-4b16-8d61-eec44616acc5",
+                    "user_id": "357281151171166208",
+                    "prediction": "win",
+                    "amount": 800,
+                    "status": "won",
+                    "payout": 1131,
+                    "placed_at": "2026-08-21T18:00:48.837727+00:00",
+                    "resolved_at": "2026-08-21T18:40:42.686245+00:00",
+                    "multiplier": 1.4142857142857141
+                },
+                {
+                    "bet_id": "8b973949-e230-4cb0-a6dd-a8eb8dea1579",
+                    "market_id": "bd223ab4-4c79-4b16-8d61-eec44616acc5",
+                    "user_id": "326498285978124289",
+                    "prediction": "win",
+                    "amount": 600,
+                    "status": "won",
+                    "payout": 848,
+                    "placed_at": "2026-08-21T18:10:31.355105+00:00",
+                    "resolved_at": "2026-08-21T18:40:42.686245+00:00",
+                    "multiplier": 1.4142857142857141
+                },
+                {
+                    "bet_id": "fae840f6-0a0a-4184-aa07-dda2fb64b596",
+                    "market_id": "bd223ab4-4c79-4b16-8d61-eec44616acc5",
+                    "user_id": "274023011688906753",
+                    "prediction": "loss",
+                    "amount": 300,
+                    "status": "lost",
+                    "payout": 0,
+                    "placed_at": "2026-08-21T18:26:34.797258+00:00",
+                    "resolved_at": "2026-08-21T18:40:42.686245+00:00",
+                    "multiplier": 0.0
+                }
+            ],
+            "reason": "win",
+            "settled_at": "2026-08-21T18:40:42.686272+00:00"
+        },
+        {
+            "market": {
+                "market_id": "c3a65072-7ba3-4dff-96ab-26c97a308f0e",
+                "type": "next_game_wl",
+                "status": "resolved",
+                "created_at": "2026-08-21T18:40:42.686313+00:00",
+                "multiplier_win": 1.8,
+                "multiplier_loss": 1.8,
+                "match_id": "NA1_5625696175",
+                "resolution": "win",
+                "resolved_at": "2026-08-21T19:08:00.634754+00:00",
+                "dynamic_multiplier": 1.2,
+                "total_pool": 1000
+            },
+            "bets": [
+                {
+                    "bet_id": "bdeb5005-8943-4de8-8e53-c655ac7f4430",
+                    "market_id": "c3a65072-7ba3-4dff-96ab-26c97a308f0e",
+                    "user_id": "525825288932818974",
+                    "prediction": "win",
+                    "amount": 1000,
+                    "status": "won",
+                    "payout": 1200,
+                    "placed_at": "2026-08-21T19:07:43.101696+00:00",
+                    "resolved_at": "2026-08-21T19:08:00.634754+00:00",
+                    "multiplier": 1.2
+                }
+            ],
+            "reason": "win",
+            "settled_at": "2026-08-21T19:08:00.634772+00:00"
+        },
+        {
+            "market": {
+                "market_id": "99e6a28d-6938-4f1c-b90c-5e7c297eda9d",
+                "type": "next_game_wl",
+                "status": "cancelled",
+                "created_at": "2026-08-21T19:08:00.634843+00:00",
+                "multiplier_win": 1.8,
+                "multiplier_loss": 1.8,
+                "match_id": "NA1_5625809359",
+                "resolution": "unknown",
+                "resolved_at": "2026-08-21T23:36:30.228468+00:00"
+            },
+            "bets": [
+                {
+                    "bet_id": "e324d700-468b-42fb-afeb-753514665a72",
+                    "market_id": "99e6a28d-6938-4f1c-b90c-5e7c297eda9d",
+                    "user_id": "525825288932818974",
+                    "prediction": "win",
+                    "amount": 1000,
+                    "status": "refunded",
+                    "payout": 1000,
+                    "placed_at": "2026-08-21T20:33:35.197464+00:00",
+                    "resolved_at": "2026-08-21T23:36:30.228468+00:00"
+                }
+            ],
+            "reason": "unknown",
+            "settled_at": "2026-08-21T23:36:30.228484+00:00"
+        },
+        {
+            "market": {
+                "market_id": "f9456e30-e964-40e4-b0bd-86f4ab74d2f0",
+                "type": "next_game_wl",
+                "status": "resolved",
+                "created_at": "2026-08-21T23:36:30.228505+00:00",
+                "multiplier_win": 1.8,
+                "multiplier_loss": 1.8,
+                "match_id": "NA1_5625823592",
+                "resolution": "win",
+                "resolved_at": "2026-08-22T00:09:19.121450+00:00",
+                "dynamic_multiplier": 1.2,
+                "total_pool": 0
+            },
+            "bets": [],
+            "reason": "win",
+            "settled_at": "2026-08-22T00:09:19.121465+00:00"
+        },
+        {
+            "market": {
+                "market_id": "4f105470-34ee-478e-bc74-ac76b36c4e4c",
+                "type": "next_game_wl",
+                "status": "resolved",
+                "created_at": "2026-08-22T00:09:19.121488+00:00",
+                "multiplier_win": 1.8,
+                "multiplier_loss": 1.8,
+                "match_id": "NA1_5625851341",
+                "resolution": "loss",
+                "resolved_at": "2026-08-22T01:00:12.742206+00:00",
+                "dynamic_multiplier": 1.2,
+                "total_pool": 200
+            },
+            "bets": [
+                {
+                    "bet_id": "56cb6267-e4c8-45c8-9d17-151c11a40154",
+                    "market_id": "4f105470-34ee-478e-bc74-ac76b36c4e4c",
+                    "user_id": "365942854809419786",
+                    "prediction": "win",
+                    "amount": 200,
+                    "status": "lost",
+                    "payout": 0,
+                    "placed_at": "2026-08-22T00:10:16.644949+00:00",
+                    "resolved_at": "2026-08-22T01:00:12.742206+00:00",
+                    "multiplier": 0.0
+                }
+            ],
+            "reason": "loss",
+            "settled_at": "2026-08-22T01:00:12.742392+00:00"
+        },
+        {
+            "market": {
+                "market_id": "ff41922f-c4f3-462d-a338-7a232f12cdcc",
+                "type": "next_game_wl",
+                "status": "resolved",
+                "created_at": "2026-08-22T01:00:12.742445+00:00",
+                "multiplier_win": 1.8,
+                "multiplier_loss": 1.8,
+                "match_id": "NA1_5625877679",
+                "resolution": "loss",
+                "resolved_at": "2026-08-22T01:35:32.534304+00:00",
+                "dynamic_multiplier": 1.2,
+                "total_pool": 200
+            },
+            "bets": [
+                {
+                    "bet_id": "cb53cedf-e59e-4168-8591-fbb68efde147",
+                    "market_id": "ff41922f-c4f3-462d-a338-7a232f12cdcc",
+                    "user_id": "333071784679309313",
+                    "prediction": "win",
+                    "amount": 200,
+                    "status": "lost",
+                    "payout": 0,
+                    "placed_at": "2026-08-22T01:33:04.603423+00:00",
+                    "resolved_at": "2026-08-22T01:35:32.534304+00:00",
+                    "multiplier": 0.0
+                }
+            ],
+            "reason": "loss",
+            "settled_at": "2026-08-22T01:35:32.534325+00:00"
+        },
+        {
+            "market": {
+                "market_id": "339ed144-fc31-44f4-a69e-b00a78ff3ee1",
+                "type": "next_game_wl",
+                "status": "resolved",
+                "created_at": "2026-08-22T01:35:32.534367+00:00",
+                "multiplier_win": 1.8,
+                "multiplier_loss": 1.8,
+                "match_id": "NA1_5626010369",
+                "resolution": "win",
+                "resolved_at": "2026-08-22T04:15:46.641830+00:00",
+                "dynamic_multiplier": 1.2,
+                "total_pool": 1
+            },
+            "bets": [
+                {
+                    "bet_id": "63a9b7fa-18f5-4af2-8c8f-57254c34ee3f",
+                    "market_id": "339ed144-fc31-44f4-a69e-b00a78ff3ee1",
+                    "user_id": "395306767304622080",
+                    "prediction": "win",
+                    "amount": 1,
+                    "status": "won",
+                    "payout": 1,
+                    "placed_at": "2026-08-22T03:48:40.759166+00:00",
+                    "resolved_at": "2026-08-22T04:15:46.641830+00:00",
+                    "multiplier": 1.2
+                }
+            ],
+            "reason": "win",
+            "settled_at": "2026-08-22T04:15:46.641848+00:00"
+        },
+        {
+            "market": {
+                "market_id": "245165c8-636b-47a2-9a54-c71fe003bb3b",
+                "type": "next_game_wl",
+                "status": "resolved",
+                "created_at": "2026-08-22T04:15:46.641898+00:00",
+                "multiplier_win": 1.8,
+                "multiplier_loss": 1.8,
+                "match_id": "NA1_5626041572",
+                "resolution": "loss",
+                "resolved_at": "2026-08-22T05:03:08.739747+00:00",
+                "dynamic_multiplier": 101.2,
+                "total_pool": 202
+            },
+            "bets": [
+                {
+                    "bet_id": "f59e1c21-4a7d-4754-950c-31c218b3dca7",
+                    "market_id": "245165c8-636b-47a2-9a54-c71fe003bb3b",
+                    "user_id": "395306767304622080",
+                    "prediction": "win",
+                    "amount": 200,
+                    "status": "lost",
+                    "payout": 0,
+                    "placed_at": "2026-08-22T04:16:43.986507+00:00",
+                    "resolved_at": "2026-08-22T05:03:08.739747+00:00",
+                    "multiplier": 0.0
+                },
+                {
+                    "bet_id": "f51e1ca2-3e62-4745-8490-3f8efd80d774",
+                    "market_id": "245165c8-636b-47a2-9a54-c71fe003bb3b",
+                    "user_id": "333071784679309313",
+                    "prediction": "loss",
+                    "amount": 2,
+                    "status": "won",
+                    "payout": 202,
+                    "placed_at": "2026-08-22T04:48:12.782294+00:00",
+                    "resolved_at": "2026-08-22T05:03:08.739747+00:00",
+                    "multiplier": 101.2
+                }
+            ],
+            "reason": "loss",
+            "settled_at": "2026-08-22T05:03:08.739768+00:00"
+        },
+        {
+            "market": {
+                "market_id": "c327ede6-374b-41e2-b13e-1ffec3e7ae04",
+                "type": "next_game_wl",
+                "status": "resolved",
+                "created_at": "2026-08-22T05:03:08.739815+00:00",
+                "multiplier_win": 1.8,
+                "multiplier_loss": 1.8,
+                "match_id": "NA1_5626083408",
+                "resolution": "win",
+                "resolved_at": "2026-08-22T05:39:59.862070+00:00",
+                "dynamic_multiplier": 1.2,
+                "total_pool": 500
+            },
+            "bets": [
+                {
+                    "bet_id": "33f0e281-d94d-429b-a0ea-291369314819",
+                    "market_id": "c327ede6-374b-41e2-b13e-1ffec3e7ae04",
+                    "user_id": "326498285978124289",
+                    "prediction": "win",
+                    "amount": 500,
+                    "status": "won",
+                    "payout": 600,
+                    "placed_at": "2026-08-22T05:08:02.160862+00:00",
+                    "resolved_at": "2026-08-22T05:39:59.862070+00:00",
+                    "multiplier": 1.2
+                }
+            ],
+            "reason": "win",
+            "settled_at": "2026-08-22T05:39:59.862090+00:00"
+        },
+        {
+            "market": {
+                "market_id": "451e3d72-90b1-415c-b9b2-bcab82cdd37f",
+                "type": "next_game_wl",
+                "status": "resolved",
+                "created_at": "2026-08-22T05:39:59.862109+00:00",
+                "multiplier_win": 1.8,
+                "multiplier_loss": 1.8,
+                "match_id": "NA1_5626107404",
+                "resolution": "win",
+                "resolved_at": "2026-08-22T06:25:51.073310+00:00",
+                "dynamic_multiplier": 1.2,
+                "total_pool": 0
+            },
+            "bets": [],
+            "reason": "win",
+            "settled_at": "2026-08-22T06:25:51.073349+00:00"
         }
     ]
 }

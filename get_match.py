@@ -228,7 +228,7 @@ def compute_lp_diff(initial_rank, final_rank):
 
 async def on_new_match(match_id: str, database=DATABASE_PATH):
     print(f"on_new_match called with {match_id}")
-    time.sleep(2)
+    await asyncio.sleep(10)
     with open(database, "r", encoding="utf-8") as file:
         data = json.load(file)
 

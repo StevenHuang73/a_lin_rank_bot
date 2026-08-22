@@ -438,8 +438,8 @@ async def poro_reset(interaction: discord.Interaction):
 @poro.command(name="help", description="How Poro betting works")
 async def poro_help(interaction: discord.Interaction):
     market = poros.get_market_info()
-    win_odds = _fmt_multiplier(market["multiplier_win"] if market else poros.WIN_MULTIPLIER)
-    loss_odds = _fmt_multiplier(market["multiplier_loss"] if market else poros.LOSS_MULTIPLIER)
+    win_odds = _fmt_multiplier(market["estimated_win_multiplier"] if market else 1.2)
+    loss_odds = _fmt_multiplier(market["estimated_loss_multiplier"] if market else 1.2)
     embed = discord.Embed(
         title="Poro Betting",
         description="Bet Poros on a.lin's next ranked Solo/Duo game.",
@@ -457,8 +457,8 @@ async def poro_help(interaction: discord.Interaction):
         inline=False,
     )
     embed.add_field(
-        name="Odds",
-        value=f"Win pays {win_odds}. Loss pays {loss_odds}. Payouts round down.",
+        name="Odds (live estimate)",
+        value=f"Win currently pays ~{win_odds}. Loss currently pays ~{loss_odds}. Odds shift as more bets come in and lock in only at resolution. Payouts round down.",
         inline=False,
     )
     embed.add_field(
@@ -467,7 +467,7 @@ async def poro_help(interaction: discord.Interaction):
             f"New players start with **{poros.STARTING_BALANCE}** Poros.\n"
             "You can add more on the same side, but you cannot hedge both win and loss.\n"
             "`/undo` returns your pending stake before the match resolves.\n"
-            "Stake is taken when you bet. Winners get stake × odds back.\n"
+            "Stake is taken when you bet. Winners get stake × final odds back.\n"
             "Remakes and unresolved matches refund bets.\n"
             f"Reset is only at 0 Poros, once every **{int(poros.RESET_COOLDOWN_HOURS)}** hours."
         ),
